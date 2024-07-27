@@ -1,8 +1,7 @@
 // Desc: Layout component that wraps the Navbar and children components
-import React from 'react';
-import Navbar from './components/Navbar';
+import Navbar from "./Components/Navbar";
 
-const Layout = ({ children }) => {  
+const Layout = ({ children }) => {
   return (
     <div>
       <Navbar />
