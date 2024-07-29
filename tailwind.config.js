@@ -9,6 +9,9 @@ export default {
     fontFamily: {
       custom: ['Roboto'],
     },
+    backgroundImage: {
+      'hero-pattern': "url('/Asset/income-Tax.jpg')",
+    },
   },
   plugins: [],
 }

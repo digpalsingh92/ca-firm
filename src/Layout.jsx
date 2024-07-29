@@ -1,4 +1,5 @@
 // Desc: Layout component that wraps the Navbar and children components
+
 import Navbar from "./Components/Navbar";
 
 const Layout = ({ children }) => {
