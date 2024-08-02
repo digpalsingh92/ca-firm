@@ -4,6 +4,7 @@ import OurTeam from "../Components/OurTeam";
 import OurServices from "../Components/OurServices";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
+import HomeOverview from "../Components/HomeOverview";
 
 export default function Home() {
   const containerStyles = {
@@ -20,8 +21,15 @@ export default function Home() {
             <ImageSlider />
           </div>
         </section>
+        <section>
+          <HomeOverview />
+          </section>
+        <section>
         <OurServices />
+        </section>
+        <section>
         <OurTeam />
+        </section>
       </div>
       <Footer />
     </>

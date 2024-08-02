@@ -27,7 +27,6 @@ export default function Header() {
           <FaLinkedin className="text-teal-400"/>
         </div>
       </div>
-      <Navbar />
     </header>
   );
 }

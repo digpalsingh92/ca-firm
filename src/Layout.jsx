@@ -1,4 +1,4 @@
-// Desc: Layout component that wraps the Navbar and children components
+// // Desc: Layout component that wraps the Navbar and children components
 
 import Navbar from "./Components/Navbar";
 

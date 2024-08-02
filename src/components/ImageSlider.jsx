@@ -16,7 +16,6 @@ const sliderStyles = {
 const slideStyles = {
   width: "100%",
   height: "100%",
-  borderRadius: "10px",
   backgroundSize: "cover",
   backgroundPosition: "center",
   alignItems: "center",
@@ -34,7 +33,8 @@ const rightArrowStyles = {
   color: "#fff",
   zIndex: 1,
   cursor: "pointer",
-  color: "#5EEAD4",
+  borderRadius: "10px",
+  color: "#0d9488",
 };
 
 const leftArrowStyles = {
@@ -46,11 +46,12 @@ const leftArrowStyles = {
   color: "#fff",
   zIndex: 1,
   cursor: "pointer",
-  color: "#5EEAD4",
   padding: "5px",
   width: "30px",
   alignItems: "center",
   backgroundColor: "#334155",
+  borderRadius: "10px",
+  color: "#0d9488",
 };
 
 const dotsContainerStyles = {
@@ -100,6 +101,7 @@ export default function ImageSlider() {
             style={dotStyle}
             key={slideIndex}
             onClick={() => goToSlide(slideIndex)}
+            className=" text-slate-700"
           >
             ●
           </div>
