@@ -3,6 +3,7 @@ import { FaFacebookSquare } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -16,7 +17,7 @@ export default function Footer() {
           </p>
         </div>
         <div>
-          <h2 className="text-lg font-bold mb-4">Our Services</h2>
+          <h2 className="text-lg text-teal-600 font-bold mb-4">Our Services</h2>
           <ul className="text-sm space-y-2">
             {[
               'Audit & Assurance Services',
@@ -36,7 +37,7 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <h2 className="text-lg font-bold mb-4">Our Locations</h2>
+          <h2 className="text-lg text-teal-600 font-bold mb-4">Our Locations</h2>
           <div className="mb-4">
             <h3 className="text-md font-semibold">Noida</h3>
             <p className="text-sm">
@@ -59,25 +60,25 @@ export default function Footer() {
           <p className="text-sm">Mon - Sat 9:00AM - 6:00PM IST</p>
         </div>
         <div>
-          <h2 className="text-lg font-bold mb-4">Contact Us</h2>
+          <h2 className="text-lg text-teal-600 font-bold mb-4">Contact Us</h2>
           <p className="text-sm mb-4">
             <span className="block">Call: +91-81301 25321</span>
             <span className="block">Email: digpalsingh18901@gmail.com</span>
           </p>
-          <h2 className="text-lg font-bold mb-4">Stay in Touch</h2>
+          <h2 className="text-lg text-teal-600 font-bold mb-4">Stay in Touch</h2>
           <div className="flex space-x-4">
-            <a href="#" className="text-gray-400 hover:text-teal-500">
+            <Link to="#" className="text-gray-400 hover:text-teal-500">
             <span className='flex flex-col justify-center items-center'> <FaFacebookSquare/> Facebook</span> 
-            </a>
-            <a href="#" className="text-gray-400 hover:text-teal-500">
+            </Link>
+            <Link to="#" className="text-gray-400 hover:text-teal-500">
             <span className='flex flex-col justify-center items-center'> <FaSquareXTwitter/> Twitter</span> 
-            </a>
-            <a href="#" className="text-gray-400 hover:text-teal-500">
+            </Link>
+            <Link to="https://linkedin.com/in/digpalsingh92" className="text-gray-400 hover:text-teal-500">
             <span className='flex flex-col justify-center items-center'> <FaLinkedin/> Linkedin</span> 
-            </a>
-            <a href="#" className="text-gray-400 hover:text-teal-500">
+            </Link>
+            <Link to="#" className="text-gray-400 hover:text-teal-500">
              <span className='flex flex-col justify-center items-center'> <FaYoutube/> YouTube</span> 
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -85,9 +86,9 @@ export default function Footer() {
         <p>&copy; 2024 Kalpana & Associates. All rights reserved.</p>
         <p>All material presented herein is intended for information purposes only.</p>
         <div className="mt-4">
-          <a href="#" className="text-gray-400 hover:text-teal-500 mx-2">Privacy Policy</a>
+          <Link to="#" className="text-gray-400 hover:text-teal-500 mx-2">Privacy Policy</Link>
           <span className="mx-1 text-lg">|</span>
-          <a href="#" className="text-gray-400 hover:text-teal-500 mx-2">Disclaimer</a>
+          <Link to="#" className="text-gray-400 hover:text-teal-500 mx-2">Disclaimer</Link>
         </div>
       </div>
     </footer>

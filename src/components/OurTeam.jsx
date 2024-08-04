@@ -1,55 +1,81 @@
 import React from "react";
-import user from "../Asset/user.png";
+import { Link, useNavigate } from "react-router-dom";
+import user from "../Asset/user.png"; // Replace with actual image paths
+
 export default function OurTeam() {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("#");
+  };
+
+  const teamMembers = [
+    {
+      name: "CA Kalpana",
+      qualifications: "CA",
+      mNo: "M. No. 000001",
+      position: "Founder",
+      mobile: "8826897211",
+      email: "abc@gmail.com",
+      image: user, // Replace with actual image path
+    },
+    {
+      name: "CA Lalit",
+      qualifications: "CA",
+      mNo: "M. No. 000002",
+      position: "Founding Partner",
+      mobile: "8826897210",
+      email: "abc@gmail.com",
+      image: user, // Replace with actual image path
+    },
+    // Add more team members here
+  ];
+
   return (
-    <>
-      <section className="w-full h-[500px] mt-7 p-5 justify-center items-center border-b-gray-900">
-        <div className="w-full h-full m-2 flex items-center justify-center">
-          <div className="w-[90%] h-[500px] flex gap-4 p-3 flex-col justify-center items-center">
-            <div className="w-full h-[50px] flex items-center justify-center">
-              <span className="text-4xl text-slate-800 font-bold">Meet Our Team</span>
-            </div>
-            <div className="w-full h-[450px] gap-[35px] flex flex-row justify-center items-center">
-              <div className="w-[25%] box-border shadow-md shadow-slate-300 h-[410px] flex justify-center hover:shadow-lg hover:shadow-slate-800">
-                <div className="w-[250px] h-[100px] items-center rounded-[50%] flex gap-3 flex-col">
-                  <img className="mt-2 flex justify-center items-center w-[170px]" src={user} />
-                  <div className="w-full h-full flex mt-3 flex-col gap-3">
-                    <span className="text-xl flex flex-col justify-center items-center font-bold text-slate-800">Name</span>
-                    <div className=" flex flex-col justify-center items-center "><p className="text-md w-full font-light text-slate-800">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi maxime praesentium perspiciatis perferendis quos obcaecati vitae, dolor ullam necessitatibus eos, ratione cum sint sunt facilis quas voluptates magni nobis rem.</p></div>
-                  </div>
-                </div>
+    <section className="w-full mt-10 p-5">
+      <div className="w-full flex flex-col items-center">
+        <h2 className="text-4xl text-slate-800 font-bold mb-8">
+          Founding Partners
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {teamMembers.map((member, index) => (
+            <div
+              key={index}
+              className="w-[90%] max-w-3xl mx-auto shadow-md shadow-teal-100 rounded-lg overflow-hidden flex"
+              onClick={handleClick}
+            >
+              <div className="w-[40%] flex justify-center items-center">
+                <img
+                  className="w-[90%] p-2 h-auto object-cover"
+                  src={member.image}
+                  alt={member.name}
+                />
               </div>
-              <div className="w-[25%] box-border shadow-md shadow-slate-300 h-[410px] flex justify-center hover:shadow-lg hover:shadow-slate-800">
-                <div className="w-[250px] h-[100px] items-center rounded-[50%] flex gap-3 flex-col">
-                  <img className="mt-2 flex justify-center items-center w-[170px]" src={user} />
-                  <div className="w-full h-full flex mt-3 flex-col gap-3">
-                    <span className="text-xl flex flex-col justify-center items-center font-bold text-slate-800">Name</span>
-                    <div className=" flex flex-col justify-center items-center "><p className="text-md w-full font-light text-slate-800">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi maxime praesentium perspiciatis perferendis quos obcaecati vitae, dolor ullam necessitatibus eos, ratione cum sint sunt facilis quas voluptates magni nobis rem.</p></div>
-                  </div>
-                </div>
-              </div>
-              <div className="w-[25%] box-border shadow-md shadow-slate-300 h-[410px] flex justify-center hover:shadow-lg hover:shadow-slate-800">
-                <div className="w-[250px] h-[100px] items-center rounded-[50%] flex gap-3 flex-col">
-                  <img className="mt-2 flex justify-center items-center w-[170px]" src={user} />
-                  <div className="w-full h-full flex mt-3 flex-col gap-3">
-                    <span className="text-xl flex flex-col justify-center items-center font-bold text-slate-800">Name</span>
-                    <div className=" flex flex-col justify-center items-center "><p className="text-md w-full font-light text-slate-800">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi maxime praesentium perspiciatis perferendis quos obcaecati vitae, dolor ullam necessitatibus eos, ratione cum sint sunt facilis quas voluptates magni nobis rem.</p></div>
-                  </div>
-                </div>
-              </div>
-              <div className="w-[25%] box-border shadow-md shadow-slate-300 h-[410px] flex justify-center hover:shadow-lg hover:shadow-slate-800">
-                <div className="w-[250px] h-[100px] items-center rounded-[50%] flex gap-3 flex-col">
-                  <img className="mt-2 flex justify-center items-center w-[170px]" src={user} />
-                  <div className="w-full h-full flex mt-3 flex-col gap-3">
-                    <span className="text-xl flex flex-col justify-center items-center font-bold text-slate-800">Name</span>
-                    <div className=" flex flex-col justify-center items-center "><p className="text-md w-full font-light text-slate-800">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi maxime praesentium perspiciatis perferendis quos obcaecati vitae, dolor ullam necessitatibus eos, ratione cum sint sunt facilis quas voluptates magni nobis rem.</p></div>
-                  </div>
-                </div>
+              <div className="w-[60%] p-5 flex flex-col justify-center">
+                <h3 className="text-xl font-bold text-slate-800">
+                  {member.name}
+                </h3>
+                <p className="text-sm text-slate-600 mt-1">
+                  {member.qualifications}
+                </p>
+                <p className="text-sm text-slate-600 mt-1">{member.mNo}</p>
+                <p className="text-sm text-slate-600 mt-1">{member.position}</p>
+                <p className="text-sm text-slate-600 mt-1">
+                  Mobile: {member.mobile}
+                </p>
+                <p className="text-sm text-slate-600 mt-1">
+                  E-mail: {member.email}
+                </p>
+                <button className="mt-4 py-2 px-3 w-[60%] bg-slate-800 text-white rounded hover:bg-slate-900 transition duration-200">
+                  <Link to="#">
+                  Explore More
+                  </Link>
+                </button>
               </div>
             </div>
-          </div>
+          ))}
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function OurServices() {
   return (
     <>
-      <section className="w-full h-[500px] mt-10 p-5 justify-center items-center border-b-gray-900">
+      <section className="w-full h-[500px] mt-10 p-5 justify-center items-center bg-slate-100">
         <div className="w-full h-full m-2 flex items-center justify-center">
           <div className="w-[90%] h-[450px] flex flex-col justify-center items-center">
             <div className="w-full h-[50px] flex items-center justify-center">

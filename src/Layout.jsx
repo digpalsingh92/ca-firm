@@ -1,5 +1,6 @@
 // // Desc: Layout component that wraps the Navbar and children components
 
+import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
 
 const Layout = ({ children }) => {
@@ -7,6 +8,7 @@ const Layout = ({ children }) => {
     <div>
       <Navbar />
       {children}
+      <Footer />
     </div>
   );
 };

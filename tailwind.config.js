@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {},
     fontFamily: {
-      custom: ['Roboto'],
+      custom: ["ubuntu", "sans-serif"],
     },
     backgroundImage: {
       'hero-pattern': "url('/Asset/income-Tax.jpg')",
