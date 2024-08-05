@@ -3,17 +3,17 @@ import { Link, useNavigate } from 'react-router-dom';
 import Breadcrumb from '../Components/Breadcrumb';
 
 const services = [
-  { id: 1, name: 'Accounting' },
-  { id: 2, name: 'Auditing & Assurance' },
-  { id: 3, name: 'Income Tax' },
-  { id: 4, name: 'Goods & Services Tax (GST)' },
-  { id: 5, name: 'Company Law Matters Consultancy' },
-  { id: 6, name: 'Startup Services' },
-  { id: 7, name: 'Societies and Trust (NGO)' },
-  { id: 8, name: 'Foreign Collaborations Services' },
-  { id: 9, name: 'Import - Export Consultancy' },
-  { id: 10, name: 'Finance' },
-  { id: 11, name: 'Business Process Outsources (BPO)' },
+  { id: 1, urlend: "accounting", name: 'Accounting' },
+  { id: 2, urlend: "auditing-assurance", name: 'Auditing Assurance' },
+  { id: 3, urlend: "income-tax", name: 'Income Tax' },
+  { id: 4, urlend: "gst", name: 'GST' },
+  { id: 5, urlend: "company-law-matters", name: 'Company Law Matters Consultancy' },
+  { id: 6, urlend: "startup-services", name: 'Startup Services' },
+  { id: 7, urlend: "trust-ngo", name: 'Societies and Trust (NGO)' },
+  { id: 8, urlend: "foreign-collaborations-services", name: 'Foreign Collaborations Services' },
+  { id: 9, urlend: "import-export-consultancy", name: 'Import Export Consultancy' },
+  { id: 10, urlend: "finance", name: 'Finance' },
+  { id: 11, urlend: "bpo", name: 'Business Process Outsources (BPO)' },
 ];
 
 const serviceDetails = {
@@ -85,7 +85,7 @@ const serviceDetails = {
     ],
   },
   9: {
-    title: 'Import - Export Consultancy',
+    title: 'Import Export Consultancy',
     description: [
       'Consultancy for import-export businesses.',
       'Assistance with regulatory compliance.',
@@ -152,7 +152,7 @@ const Services = () => {
           ))}
         </ul>
         <Link
-          to={`/services/${selectedService.name
+          to={`/services/${selectedService.urlend
             .toLowerCase()
             .replace(/ /g, "-")}`}
           className="mt-4 inline-block bg-slate-800 text-white py-2 px-4 rounded-md shadow hover:bg-teal-600"

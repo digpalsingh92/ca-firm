@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 mt-6 text-white py-10">
+    <footer className="bg-gray-900 mt-6 p-5 text-white">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
           <h2 className="text-lg font-bold mb-4 text-teal-500">Kalpana & Associates</h2>
@@ -31,7 +31,7 @@ export default function Footer() {
               'Outsourcing Services',
             ].map((service, index) => (
               <li key={index} className='text-slate-300 font-medium hover:text-teal-500 cursor-pointer'>
-                {service}
+               <Link to="/services"> {service}</Link>
               </li>
             ))}
           </ul>

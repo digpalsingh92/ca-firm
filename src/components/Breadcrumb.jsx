@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'; // If you're using React Router
 
 export default function Breadcrumb({ items }) {
   return (
-    <nav className="bg-gray-100 py-3 px-5 rounded-md w-full">
+    <nav className="bg-slate-100 py-3 px-5 rounded-md w-full">
       <ol className="list-reset flex font-medium text-gray-600">
         {items.map((item, index) => (
           <li key={index} className="flex items-center">

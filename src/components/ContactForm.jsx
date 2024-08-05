@@ -5,6 +5,9 @@ const ContactForm = () => {
     name: "",
     email: "",
     phone: "",
+    service: "",
+    country: "",
+    city: "",
     message: ""
   });
 
@@ -17,77 +20,110 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     console.log(formData);
-    setFormData(""); // Clear the form after submission
-  }
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      service: "",
+      country: "",
+      city: "",
+      message: ""
+    }); // Clear the form after submission
+  };
 
   return (
-    <div className="w-full m-auto bg-white p-8 shadow-md rounded-md">
-      <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
-            Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            className="w-full px-3 py-2 border rounded"
-            required
-          />
+    <div className="container mx-auto p-8">
+      <div className="flex flex-col lg:flex-row justify-between bg-white shadow-lg p-6 rounded-lg">
+        <div className="bg-blue-500 text-white p-8 rounded-lg lg:w-1/3">
+          <h2 className="text-2xl font-bold mb-4">G. K. Kedia & Co.</h2>
+          <p className="mb-4">
+            For any query, concern or financial advice and solution, get in touch with us today!
+          </p>
+          <h3 className="font-bold">Opening Hour</h3>
+          <p>Mon - Sat: 9:30 am to 6 pm</p>
         </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            className="w-full px-3 py-2 border rounded"
-            required
-          />
+        <div className="flex flex-col lg:w-2/3 p-8 bg-gray-100 rounded-lg">
+          <form className="grid grid-cols-1 lg:grid-cols-2 gap-4" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              value={formData.name}
+              onChange={handleChange}
+              className="p-2 rounded border border-gray-300"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="E-Mail Id"
+              value={formData.email}
+              onChange={handleChange}
+              className="p-2 rounded border border-gray-300"
+              required
+            />
+            <input
+              type="text"
+              name="phone"
+              placeholder="Phone No."
+              value={formData.phone}
+              onChange={handleChange}
+              className="col-span-1 lg:col-span-2 p-2 rounded border border-gray-300"
+              required
+            />
+            <select
+              name="service"
+              value={formData.service}
+              onChange={handleChange}
+              className="p-2 rounded border border-gray-300"
+              required
+            >
+              <option value="">Select Services</option>
+              <option value="Accounting">Accounting</option>
+              <option value="Auditing">Auditing</option>
+              <option value="Consultancy">Consultancy</option>
+            </select>
+            <input
+              type="text"
+              name="country"
+              placeholder="Select Country"
+              value={formData.country}
+              onChange={handleChange}
+              className="p-2 rounded border border-gray-300"
+              required
+            />
+            <input
+              type="text"
+              name="city"
+              placeholder="City"
+              value={formData.city}
+              onChange={handleChange}
+              className="p-2 rounded border border-gray-300"
+              required
+            />
+            <textarea
+              name="message"
+              placeholder="Message"
+              value={formData.message}
+              onChange={handleChange}
+              className="col-span-1 lg:col-span-2 p-2 rounded border border-gray-300"
+              rows="4"
+              required
+            ></textarea>
+            <div className="col-span-1 lg:col-span-2 flex items-center">
+              <input type="checkbox" className="mr-2" required />
+              <span>I'm not a robot</span>
+            </div>
+            <button
+              type="submit"
+              className="col-span-1 lg:col-span-2 bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
+            >
+              SUBMIT NOW
+            </button>
+          </form>
         </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="phone">
-            Phone
-          </label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            className="w-full px-3 py-2 border rounded"
-            required
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="message">
-            Message
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            className="w-full px-3 py-2 border rounded"
-            rows="4"
-            required
-          ></textarea>
-        </div>
-        <div className="mb-4">
-          <button type="submit" className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">
-            Send Message
-          </button>
-        </div>
-      </form>
+      </div>
     </div>
   );
 };

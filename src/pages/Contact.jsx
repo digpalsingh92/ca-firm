@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-import "tailwindcss/tailwind.css";
 import ContactForm from "../Components/ContactForm";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaPhoneAlt } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa";
 
 const offices = [
   {
@@ -48,66 +50,58 @@ const containerStyle = {
   height: "400px",
 };
 
-const API_KEY = process.env.GOOGLE_MAPS_API_KEY;
 
 const ContactPage = () => {
   const [selectedOffice, setSelectedOffice] = useState(offices[0]);
 
   return (
     <section className=" bg-gray-100">
-        <div className="flex flex-col mt-5 justify-center items-center w-full min-h-screen">
-          <div className=" w-[90%] bg-gray-100 ">
-            <ul className="flex gap-2">
-              {offices.map((office, index) => (
-                <li key={index}>
-                  <button
-                    onClick={() => setSelectedOffice(office)}
-                    className={`px-4 py-2 mb-2 rounded-md ${
-                      selectedOffice.name === office.name
-                        ? "bg-teal-600 text-white"
-                        : " text-black hover:bg-teal-600"
-                    }`}
-                  >
-                    {office.name}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className=" w-[90%] flex flex-col h-full justify-center">
-            <h1 className="text-3xl font-bold mb-4">
-              Head Office : {selectedOffice.name}
-            </h1>
-            <div className="mb-4">
-              <p className="text-xl">
-                <i className="fas fa-map-marker-alt"></i>{" "}
-                {selectedOffice.address}
-              </p>
-              <p className="text-xl">
-                <i className="fas fa-phone-alt"></i> {selectedOffice.phone1}
-              </p>
-              <p className="text-xl">
-                <i className="fas fa-phone-alt"></i> {selectedOffice.phone2}
-              </p>
-              <p className="text-xl">
-                <i className="fas fa-phone-alt"></i> {selectedOffice.phone3}
-              </p>
-              <p className="text-xl">
-                <i className="fas fa-envelope"></i> {selectedOffice.email}
-              </p>
-            </div>
-            <LoadScript googleMapsApiKey={API_KEY}>
-              <GoogleMap
-                mapContainerStyle={containerStyle}
-                center={selectedOffice.location}
-                zoom={15}
-              >
-                <Marker position={selectedOffice.location} />
-              </GoogleMap>
-            </LoadScript>
-          </div>
+      <div className="flex flex-col mt-5 justify-center items-center w-full min-h-screen">
+        <div className=" w-[90%] bg-gray-100 ">
+          <ul className="flex gap-2">
+            {offices.map((office, index) => (
+              <li key={index}>
+                <button
+                  onClick={() => setSelectedOffice(office)}
+                  className={`px-4 py-2 mb-2 rounded-md ${
+                    selectedOffice.name === office.name
+                      ? "bg-teal-600 text-white"
+                      : " text-black hover:bg-teal-600"
+                  }`}
+                >
+                  {office.name}
+                </button>
+              </li>
+            ))}
+          </ul>
         </div>
-        <ContactForm />
+        <div className=" w-[90%] flex flex-col h-full justify-center">
+          <h1 className="text-3xl font-bold mb-4">
+            Head Office : {selectedOffice.name}
+          </h1>
+          <div className="mb-4">
+            <p className="text-xl gap-2 flex items-center ">
+              <FaMapMarkerAlt /> {selectedOffice.address}
+            </p>
+            <p className="text-xl gap-2 flex items-center">
+              <FaPhoneAlt/> {selectedOffice.phone1}
+            </p>
+            <p className="text-xl gap-2 flex items-center">
+              <FaEnvelope/> {selectedOffice.email}
+            </p>
+          </div>
+          <LoadScript googleMapsApiKey="process.env.GOOGLE_MAPS_API_KEY">
+            <GoogleMap
+              mapContainerStyle={containerStyle}
+              center={selectedOffice.location}
+              zoom={15}
+            >
+              <Marker position={selectedOffice.location} />
+            </GoogleMap>
+          </LoadScript>
+        </div>
+      </div>
+      <ContactForm />
     </section>
   );
 };
