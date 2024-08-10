@@ -24,7 +24,7 @@ export default function Home() {
         <section>
         <OurServices />
         </section>
-        <section>
+        <section className="h-[480px]">
         <OurTeam />
         </section>
       </div>

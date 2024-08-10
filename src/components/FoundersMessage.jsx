@@ -1,9 +1,9 @@
 import React from "react";
-import dog from "../Asset/dog.jpg";
+import user from "../Asset/user.png";
 
 export default function FoundersMessage() {
   return (
-    <div className="flex flex-col w-full h-[90%] items-center justify-center min-h-scree  bg-slate-200 py-8">
+    <div className="flex flex-col w-full h-[80%] items-center justify-center  bg-slate-200 py-8">
       <div className="text-center">
         <h1 className="text-3xl font-bold mb-4">MRs. kaplana says</h1>
         <p className="max-w-3xl mx-auto text-gray-700 text-lg mb-8">
@@ -25,7 +25,7 @@ export default function FoundersMessage() {
       <div className="flex flex-col items-center">
         <div className="w-40 h-40 mb-4">
           <img
-            src={dog} // Replace with the actual image path
+            src={user} // Replace with the actual image path
             alt="CA Kaplana Chauhan"
             className="object-cover w-full h-full"
           />

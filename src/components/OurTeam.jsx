@@ -32,7 +32,7 @@ export default function OurTeam() {
   ];
 
   return (
-    <section className="w-full mt-10 p-5">
+    <section className="w-full h-full mt-10 p-5">
       <div className="w-full flex flex-col items-center">
         <h2 className="text-4xl text-slate-800 font-bold mb-8">
           Founding Partners

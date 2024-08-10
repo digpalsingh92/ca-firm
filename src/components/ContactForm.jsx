@@ -35,8 +35,9 @@ const ContactForm = () => {
   return (
     <div className="container mx-auto p-8">
       <div className="flex flex-col lg:flex-row justify-between bg-white shadow-lg p-6 rounded-lg">
-        <div className="bg-blue-500 text-white p-8 rounded-lg lg:w-1/3">
-          <h2 className="text-2xl font-bold mb-4">G. K. Kedia & Co.</h2>
+        <div className="bg-teal-500 text-white p-8 rounded-lg lg:w-1/3">
+          <h2 className="text-2xl font-bold mb-4">Kalpana Chauhan and associates
+          </h2>
           <p className="mb-4">
             For any query, concern or financial advice and solution, get in touch with us today!
           </p>
@@ -54,24 +55,27 @@ const ContactForm = () => {
               className="p-2 rounded border border-gray-300"
               required
             />
+             <input
+              type="text"
+              name="phone"
+              placeholder="Phone No."
+              value={formData.phone}
+              className="p-2 rounded border border-gray-300"
+              onChange={handleChange}
+
+              required
+            />
             <input
               type="email"
               name="email"
               placeholder="E-Mail Id"
               value={formData.email}
               onChange={handleChange}
-              className="p-2 rounded border border-gray-300"
-              required
-            />
-            <input
-              type="text"
-              name="phone"
-              placeholder="Phone No."
-              value={formData.phone}
-              onChange={handleChange}
               className="col-span-1 lg:col-span-2 p-2 rounded border border-gray-300"
+
               required
             />
+           
             <select
               name="service"
               value={formData.service}
@@ -111,13 +115,13 @@ const ContactForm = () => {
               rows="4"
               required
             ></textarea>
-            <div className="col-span-1 lg:col-span-2 flex items-center">
+            {/* <div className="col-span-1 lg:col-span-2 flex items-center">
               <input type="checkbox" className="mr-2" required />
               <span>I'm not a robot</span>
-            </div>
+            </div> */}
             <button
               type="submit"
-              className="col-span-1 lg:col-span-2 bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
+              className="col-span-1 lg:col-span-2 bg-teal-500 text-white p-2 rounded hover:bg-teal-700"
             >
               SUBMIT NOW
             </button>

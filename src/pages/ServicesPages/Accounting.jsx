@@ -13,12 +13,12 @@ export default function Accounting() {
           { name: "accounting" },
         ]}
       />
-      <div className="w-[100%] h-[80%] mt-4 mb-10 flex justify-center items-center ">
-        <div className="w-[80%] h-[80%] flex flex-col p-4 items-center rounded-md  ">
+      <div className="w-[100%] h-[90%] mt-4 mb-10 flex justify-center items-center ">
+        <div className="w-[80%] h-[100%] flex flex-col p-4 items-center rounded-md  ">
           <h1 className="text-3xl font-bold mb-4">
             Accounting and Bookkeeping Services
           </h1>
-          <div className=" w-full flex flex-col justify-center items-center">
+          <div className=" w-full h-full flex flex-col justify-center items-center">
             <p className=" w-[70%] text-left">
               The history of accounting goes back a 1000 years, but the
               relevance of it still stays strong, today! Keeping up with the
