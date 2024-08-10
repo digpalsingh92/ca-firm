@@ -1,87 +1,63 @@
-Kalpana Chauhan & Associates Website
-Project Overview
-This project is a professional website for Kalpana Chauhan & Associates, a Chartered Accountant firm providing various financial services including GST, auditing, income tax consultancy, and more. The website includes multiple features such as navigation, contact forms, and job postings.
+# G.K. Kedia & Co. Static Website
 
-Features
-Responsive Navigation Bar
+This is a static website for **G.K. Kedia & Co.**, a Chartered Accountant firm, developed using **React** and **Tailwind CSS**. The website includes various sections, including a contact form, job openings, and more, providing a simple yet professional online presence for the firm.
 
-Dynamic and responsive navigation bar with dropdown menus.
-Implemented using React and Tailwind CSS.
-Submenus for different sections like About, Our Team, Services, Resources, etc.
-Contact Form
+## Table of Contents
 
-A form to collect user queries and messages.
-The form includes fields for name, email, phone number, services, country, city, and message.
-Uses React's useState for form handling.
-Note: Since this is a static website, actual email sending logic is not implemented.
-Career Page
+- [Project Overview](#project-overview)
+- [Technologies Used](#technologies-used)
+- [Features](#features)
+- [Setup Instructions](#setup-instructions)
+- [Updating Content](#updating-content)
+- [License](#license)
+- [Contact](#contact)
 
-A dedicated page to post job openings.
-Designed to look professional and simple.
-Implemented using React and Tailwind CSS.
-Tech Stack
-Frontend: React, Tailwind CSS
-State Management: React useState
-Installation
-Clone the repository:
+## Project Overview
 
-bash
-Copy code
-git clone https://github.com/yourusername/kalpana-chauhan-associates.git
-cd kalpana-chauhan-associates
-Install dependencies:
+G.K. Kedia & Co. is a Chartered Accountant firm providing financial, GST, and other related services. The website was created to enhance the firm's online presence and provide a platform for clients to connect, inquire about services, and apply for job openings.
 
-bash
-Copy code
-npm install
-Start the development server:
+This project includes:
+- A **Contact Form** where users can submit their queries or concerns.
+- A **Career Page** where current job openings are listed, allowing potential candidates to apply directly.
 
-bash
-Copy code
-npm start
-File Structure
-src/
-components/
-Navbar.jsx - Navigation bar component
-ContactForm.jsx - Contact form component
-CareerPage.jsx - Career page component
-assets/
-logo.png - Logo of Kalpana Chauhan & Associates
-App.js - Main app component
-index.js - Entry point of the React application
-public/
-index.html - Main HTML file
-Usage
-Navigation Bar
-The navigation bar is dynamic and responsive, featuring multiple sections and submenus. It adapts to different screen sizes using Tailwind CSS.
+### Note:
+This is a static website, and it is maintained by a single person. Contributions from others are not required.
 
-Contact Form
-The contact form collects user details and messages. While it logs the form data to the console upon submission, note that email functionality is not implemented since the website is static.
+## Technologies Used
 
-Career Page
-The career page allows the posting of job openings. It is designed to be simple yet professional, enabling easy management of job listings.
+- **React**: A JavaScript library for building user interfaces.
+- **Tailwind CSS**: A utility-first CSS framework for designing responsive and modern websites.
+- **HTML**: Markup language for structuring the web content.
+- **CSS**: Stylesheet language for describing the presentation of the website.
+- **JavaScript**: Programming language for implementing dynamic features on the website.
 
-Contributing
-Fork the repository.
+## Features
 
-Create a new branch:
+### Contact Form
+- A simple contact form that allows users to submit their name, email, phone number, and message.
+- Uses React's `useState` for managing form data.
+- Includes a basic client-side validation.
 
-bash
-Copy code
-git checkout -b feature/your-feature-name
-Make your changes.
+### Career Page
+- Lists job openings with details like job title, location, job type, and description.
+- Includes an "Apply Now" button that can be linked to an email or an application form.
 
-Commit your changes:
+### Simple and Professional Design
+- The website design is clean and professional, using Tailwind CSS for styling and layout.
+- The website is fully responsive, ensuring compatibility across different devices.
 
-bash
-Copy code
-git commit -m 'Add some feature'
-Push to the branch:
+## Setup Instructions
 
-bash
-Copy code
-git push origin feature/your-feature-name
-Open a pull request.
+To run this project locally:
 
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-username/gk-kedia-website.git
+   cd gk-kedia-website
+2. Install dependencies:
+   ```sh
+    npm install
+3. Start the development server:
+   ```sh
+   npm start
+4. Open http://localhost:5173 in your browser to view the website.
