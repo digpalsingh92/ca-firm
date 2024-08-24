@@ -1,28 +1,39 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import user from "../Asset/user.png"; // Replace with actual image paths
-
+import { Link} from "react-router-dom";
+import kalpana from "../Asset/kalpana_chauhan.jpeg";
+import lalit from "../Asset/lalit_tomar.jpeg";
+import mohit from "../Asset/mohit_tripathi.jpeg";
+import user from "../Asset/user.png";
 export default function OurTeam() {
-  const navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate("#");
-  };
 
   const teamMembers = [
     {
       name: "CA Kalpana",
-      qualifications: "CA",
-      mNo: "M. No. 000001",
+      qualifications: "FCA, Certification of Concurrent Audit and Forensic Audit ,DISA, COPERATIVE SOCIATY, PGDBMA, B.Com,",
       position: "Founder",
       mobile: "8826897211",
       email: "abc@gmail.com",
-      image: user, // Replace with actual image path
+      image: kalpana, // Replace with actual image path
     },
     {
       name: "CA Lalit",
-      qualifications: "CA",
-      mNo: "M. No. 000002",
+      qualifications: "FCA, DISA, RERA, B.Com",
+      position: "Founding Partner",
+      mobile: "8826897210",
+      email: "abc@gmail.com",
+      image: lalit, // Replace with actual image path
+    },
+    {
+      name: "CA Mohit kumar Tripathi",
+      qualifications: "FCA, B.Com",
+      position: "Founding Partner",
+      mobile: "8826897210",
+      email: "abc@gmail.com",
+      image: mohit, // Replace with actual image path
+    },
+    {
+      name: "CA Jitendra Singh Chauhan",
+      qualifications: "FCA, B.Com",
       position: "Founding Partner",
       mobile: "8826897210",
       email: "abc@gmail.com",
@@ -32,7 +43,7 @@ export default function OurTeam() {
   ];
 
   return (
-    <section className="w-full h-full mt-10 p-5">
+    <section className="w-full h-full bg-slate-100 mt-[4rem]">
       <div className="w-full flex flex-col items-center">
         <h2 className="text-4xl text-slate-800 font-bold mb-8">
           Founding Partners
@@ -41,10 +52,9 @@ export default function OurTeam() {
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className="w-[90%] max-w-3xl mx-auto shadow-md shadow-teal-100 rounded-lg overflow-hidden flex"
-              onClick={handleClick}
+              className="w-[90%] max-w-3xl mx-auto bg-white rounded-lg overflow-hidden flex"
             >
-              <div className="w-[40%] flex justify-center items-center">
+              <div className="w-[40%] rounded-md flex justify-center items-center">
                 <img
                   className="w-[90%] p-2 h-auto object-cover"
                   src={member.image}

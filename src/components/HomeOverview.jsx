@@ -3,7 +3,7 @@ import BirdThumbnail from "../Asset/BirdThumbnail.jpg";
 
 export default function HomeOverview() {
   return (
-    <section className="mt-10 p-2">
+    <section className="mt-10 bg-slate-50 p-2">
       <div className="flex justify-center p-2 gap-10 items-center w-[70%] m-auto h-full">
         <div className="flex w-[35%] justify-center items-center">
           <img className="shadow-sm shadow-slate-700" src={BirdThumbnail} alt="Bird" />

@@ -7,16 +7,15 @@ const navItems = [
     name: "About",
     submenu: [
       { name: "Overview", url: "overview" },
-      { name: "Journey & Milestones", url: "journey-milestones" },
     ],
   },
   {
     name: "Our Team",
-    submenu: [
-      { name: "Founder", url: "founder" },
-      { name: "Partners", url: "partners" },
-      { name: "Staffs", url: "staffs" },
-    ],
+    // submenu: [
+    //   { name: "Founder", url: "founder" },
+    //   { name: "Partners", url: "partners" },
+    //   { name: "Staffs", url: "staffs" },
+    // ],
   },
   {
     name: "Services",
@@ -48,17 +47,18 @@ const navItems = [
 
 export default function Navbar() {
   return (
-    <nav className="bg-slate-400 shadow-lg">
+    <nav className="bg-slate-200 shadow-lg">
       <div className="container mx-auto flex justify-between items-center p-1">
         <div className="logo">
           <img src={Logo} alt="Logo" className="w-[120px]" />
         </div>
+        <div className="hidden md:block">
         <ul className="flex gap-4 space-x-6">
           {navItems.map((item, index) => (
             <li key={index} className="relative group">
               <Link
                 to={item.name === "Home" ? "/" : `/${item.name.toLowerCase().replace(/ /g, "-")}`}
-                className="text-gray-900 text-[14px] w-28 hover:text-slate-200"
+                className="text-gray-900 text-[14px] w-28 font-medium hover:text-teal-600"
               >
                 {item.name.toUpperCase()}
               </Link>
@@ -76,6 +76,7 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
+        </div>
       </div>
     </nav>
   );

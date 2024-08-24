@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Breadcrumb from "../Components/Breadcrumb";
 import FoundersMessage from "../Components/FoundersMessage";
 
@@ -132,19 +132,19 @@ const Services = () => {
   return (
     <section>
       <Breadcrumb items={[{ name: "Home", link: "/" }, { name: "services" }]} />
-      <div className="flex w-full justify-center m-auto min-h-[85vh] bg-gray-100">
+      <div className="flex flex-col md:flex-row w-full justify-center m-auto min-h-[85vh] bg-gray-100 p-4">
         {/* Sidebar */}
-        <div className="w-1/4 h-fit bg-gray-100 p-5">
+        <div className="w-full md:w-1/4 h-fit bg-gray-100 p-5 mb-4 md:mb-0">
           <h2 className="text-2xl font-bold mb-4">Our Services</h2>
           <ul>
             {services.map((service) => (
               <li key={service.id}>
                 <button
                   onClick={() => handleServiceClick(service)}
-                  className={`w-full text-left px-4 py-2 mb-2 ${
+                  className={`w-full text-left px-4 py-2 mb-2 rounded-md hover:text-white font-medium text-base ${
                     selectedService.id === service.id
-                      ? "bg-gray-200"
-                      : "hover:bg-gray-200"
+                      ? "bg-teal-600"
+                      : "hover:bg-teal-600"
                   }`}
                 >
                   {service.name}
@@ -154,7 +154,7 @@ const Services = () => {
           </ul>
         </div>
         {/* Main Content */}
-        <div className="w-2/4 h-full p-8 ml-10 rounded-md bg-white ">
+        <div className="w-full md:w-2/4 h-full p-4 md:p-8 md:ml-10 rounded-md bg-white">
           <h1 className="text-3xl font-bold mb-4">
             {serviceDetails[selectedService.id].title}
           </h1>

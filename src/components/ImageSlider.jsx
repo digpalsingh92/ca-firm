@@ -1,41 +1,49 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback, useMemo } from "react";
+import { useSwipeable } from "react-swipeable";
 
-const slides = [
-  { url: "http://localhost:5173/image-1.jpg", title: "Income-Tax Return" },
-  { url: "http://localhost:5173/image-2.jpg", title: "Activa" },
-  { url: "http://localhost:5173/image-3.jpg", title: "Midjourney" },
-  { url: "http://localhost:5173/image-4.jpg", title: "Panda" },
-  { url: "http://localhost:5173/image-5.jpg", title: "W3 School" },
-];
-
-const ImageSlider = () => {
+const ImageSlider = ({
+  slides,
+  autoSlide = true,
+  autoSlideInterval = 5000,
+}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const goToPrevious = () => {
-    const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex);
-  };
+  const goToPrevious = useCallback(() => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? slides.length - 1 : prevIndex - 1
+    );
+  }, [slides.length]);
 
-  const goToNext = () => {
-    const isLastSlide = currentIndex === slides.length - 1;
-    const newIndex = isLastSlide ? 0 : currentIndex + 1;
-    setCurrentIndex(newIndex);
-  };
+  const goToNext = useCallback(() => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === slides.length - 1 ? 0 : prevIndex + 1
+    );
+  }, [slides.length]);
 
-  const goToSlide = (slideIndex) => {
+  const goToSlide = useCallback((slideIndex) => {
     setCurrentIndex(slideIndex);
-  };
+  }, []);
 
+  // Auto slide
   useEffect(() => {
-    const interval = setInterval(() => {
-      goToNext();
-    }, 5000);
+    if (!autoSlide) return;
+
+    const interval = setInterval(goToNext, autoSlideInterval);
     return () => clearInterval(interval);
-  }, [currentIndex]);
+  }, [goToNext, autoSlide, autoSlideInterval]);
+
+  // Swipeable handlers
+  const handlers = useSwipeable({
+    onSwipedLeft: goToNext,
+    onSwipedRight: goToPrevious,
+    preventScrollOnSwipe: true,
+    trackMouse: true,
+  });
+
+  const currentSlide = useMemo(() => slides[currentIndex], [currentIndex, slides]);
 
   return (
-    <div className="relative w-full h-full overflow-hidden">
+    <div {...handlers} className="relative w-full h-full overflow-hidden">
       <div
         className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white z-10 cursor-pointer bg-gray-700 p-2 rounded-full"
         onClick={goToPrevious}
@@ -49,17 +57,17 @@ const ImageSlider = () => {
         ❱
       </div>
       <div
-        className="w-full h-full bg-cover bg-center"
+        className="w-full h-[60vh] md:h-[80vh] lg:h-[90vh] bg-cover bg-center transition-all duration-500"
         style={{
-          backgroundImage: `url(${slides[currentIndex].url})`,
+          backgroundImage: `url(${currentSlide.url})`,
         }}
       ></div>
-      <div className="absolute w-full flex justify-center bottom-4 z-10">
+      <div className="absolute w-full flex justify-center bottom-3 z-10 sm:bottom-6">
         {slides.map((_, slideIndex) => (
           <div
             key={slideIndex}
             className={`mx-1 cursor-pointer text-2xl ${
-              currentIndex === slideIndex ? "text-green-500" : "text-gray-500"
+              currentIndex === slideIndex ? "text-teal-500" : "text-slate-300"
             }`}
             onClick={() => goToSlide(slideIndex)}
           >

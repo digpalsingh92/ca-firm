@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
 import Home from "./Pages/Home";
-import About from "./Pages/About";
+import About from "./Pages/About/About";
 import Services from "./Pages/Services";
 import Contact from "./Pages/Contact";
 import Team from "./Pages/Team";
@@ -17,6 +17,7 @@ import ImportExportConsultancy from "./Pages/ServicesPages/ImportExportConsultan
 import BPOs from "./Pages/ServicesPages/BPOs";
 import Finance from "./Pages/ServicesPages/Finance";
 import Career from "./Pages/Career";
+import Overview from "./Pages/About/Overview";
 
 export default function App() {
   return (
@@ -25,8 +26,7 @@ export default function App() {
         <Routes>
           <Route path="/" exact element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/about/overview" element={<About />} />
-          <Route path="/about/journey-milestones" element={<About />} />
+          <Route path="/about/overview" element={<Overview />} />
           <Route path="/services" element={<Services />} />
           <Route path="/services/accounting" element={<Accounting />} />
           <Route path="/services/auditing-assurance" element={<Auditing />} />
@@ -41,7 +41,6 @@ export default function App() {
           <Route path="/services/import-export-consultancy" element={<ImportExportConsultancy />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/our-team" element={<Team />} />
-          <Route path="/our-team/staffs" element={<Team />} />
           <Route path="/career" element={<Career />} />
         </Routes>
       </Layout>

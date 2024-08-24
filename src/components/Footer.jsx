@@ -7,10 +7,10 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 mt-6 p-5 text-white">
+    <footer className="bg-gray-800 mt-6 p-5 rounded-lg text-white">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
-          <h2 className="text-lg font-bold mb-4 text-teal-500">Kalpana & Associates</h2>
+          <h2 className="text-lg font-bold mb-4 text-teal-500">Kalpana chauhan & Associates</h2>
           <p className="text-sm">
             We are a full-service Chartered Accountancy Firm serving clients located in India. We are located
             in the Delhi / NCR region of Delhi, Noida & Gurugram.
@@ -62,28 +62,28 @@ export default function Footer() {
         <div>
           <h2 className="text-lg text-teal-600 font-bold mb-4">Contact Us</h2>
           <p className="text-sm mb-4">
-            <span className="block">Call: +91-81301 25321</span>
-            <span className="block">Email: digpalsingh18901@gmail.com</span>
+            <span className="block">Call: +91-</span>
+            <span className="block">Email: </span>
           </p>
           <h2 className="text-lg text-teal-600 font-bold mb-4">Stay in Touch</h2>
           <div className="flex space-x-4">
-            <Link to="#" className="text-gray-400 hover:text-teal-500">
+            <Link to="#" className="text-slate-400 hover:text-teal-500">
             <span className='flex flex-col justify-center items-center'> <FaFacebookSquare/> Facebook</span> 
             </Link>
-            <Link to="#" className="text-gray-400 hover:text-teal-500">
+            <Link to="#" className="text-slate-400 hover:text-teal-500">
             <span className='flex flex-col justify-center items-center'> <FaSquareXTwitter/> Twitter</span> 
             </Link>
-            <Link to="https://linkedin.com/in/digpalsingh92" className="text-gray-400 hover:text-teal-500">
+            <Link to="#" className="text-slate-400 hover:text-teal-500">
             <span className='flex flex-col justify-center items-center'> <FaLinkedin/> Linkedin</span> 
             </Link>
-            <Link to="#" className="text-gray-400 hover:text-teal-500">
+            <Link to="#" className="text-slate-400 hover:text-teal-500">
              <span className='flex flex-col justify-center items-center'> <FaYoutube/> YouTube</span> 
             </Link>
           </div>
         </div>
       </div>
       <div className="container mx-auto text-sm text-teal-500 mt-10 text-center border-t border-gray-700 pt-6">
-        <p>&copy; 2024 Kalpana & Associates. All rights reserved.</p>
+        <p>&copy; 2024 Kalpana chauhan & Associates. All rights reserved.</p>
         <p>All material presented herein is intended for information purposes only.</p>
         <div className="mt-4">
           <Link to="#" className="text-gray-400 hover:text-teal-500 mx-2">Privacy Policy</Link>
