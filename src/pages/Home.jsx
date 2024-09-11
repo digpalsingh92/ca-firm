@@ -1,22 +1,22 @@
-import ImageSlider from "../Components/ImageSlider";
+import ImageSlider from "../components/ImageSlider";
 import "../App.css";
-import OurServices from "../Components/OurServices";
-import HomeOverview from "../Components/HomeOverview";
-import ScrollableSection from "../Components/ScrollableSection";
+import OurServices from "../components/OurServices";
+import HomeOverview from "../components/HomeOverview";
+import ScrollableSection from "../components/ScrollableSection";
 
 export default function Home() {
   const containerStyles = {
     width: "100%",
-    height: "600px",
+    height: "580px",
     margin: "0 auto",
   };
 
   const slides = [
-    { url: "images/image-1.png", title: "Income-Tax Return" },
-    { url: "images/image-2.png", title: "Activa" },
+    { url: "images/image-1.jpg", title: "Income-Tax Return" },
+    { url: "images/image-2.jpg", title: "Activa" },
     { url: "images/image-3.jpg", title: "Accounting" },
-    { url: "images/image-4.png", title: "Panda" },
-    { url: "images/image-5.png", title: "W3 School" },
+    { url: "images/image-4.jpg", title: "Panda" },
+    { url: "images/image-5.jpg", title: "W3 School" },
   ];
   return (
     <>

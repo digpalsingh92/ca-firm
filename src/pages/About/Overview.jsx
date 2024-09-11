@@ -1,5 +1,5 @@
 import React from 'react'
-import Breadcrumb from '../../Components/Breadcrumb'
+import Breadcrumb from '../../components/Breadcrumb'
 import teamImage from '../../Asset/team.jpg'
 
 export default function Overview() {

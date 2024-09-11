@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-import ContactForm from "../Components/ContactForm";
+import ContactForm from "../components/ContactForm";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
@@ -10,32 +10,32 @@ const offices = [
     name: "Greater Noida",
     Office: "HEAD OFFICE",
     address:"B-406, 4th Floor, Tower-B, Plot No 7, Techzone-4, Grandhtom, Greater Noida-201308",
-    phone: "1800110099 (India Toll Free)",
-    email: "mail@gkkediaandco.com",
+    phone: "9013870636",
+    email: "contact@kcataxcare.com",
     location: { lat: 28.6315, lng: 77.2167 },
   },
   {
     name: "Delhi",
     Office: "BRANCH OFFICE",
-    address: "F-6, Ground Floor,  Gali No 4, Pandav Nagar, Delhi-110091.",
-    phone: "Phone2",
-    email: "email@example.com",
+    address: "F-6, Ground Floor, Gali No 4, Pandav Nagar, Delhi-110091.",
+    phone: "8076501471",
+    email: "contact@kcataxcare.com",
     location: { lat: 28.6407, lng: 77.2136 },
   },
   {
     name: "Aligarh (U.P.)",
     Office: "BRANCH OFFICE",
-    address: "Block Colony,Kasiso Road Khair, Aligarh,  Uttar Pradesh-202138.",
-    phone: "Phone2",
-    email: "email@example.com",
+    address: "Block Colony, Kasiso Road Khair, Aligarh, Uttar Pradesh-202138.",
+    phone: "8076501471",
+    email: "contact@kcataxcare.com",
     location: { lat: 28.6407, lng: 77.2136 },
   },
   {
     name: "Mumbai",
     Office: "BRANCH OFFICE",
-    address: "1601, Casa Sereno Wing-E, Lodha Upperthane,Thane, Mumbai-421302.",
-    phone: "Phone2",
-    email: "email@example.com",
+    address: "1601, Casa Sereno Wing-E, Lodha Upperthane, Thane, Mumbai-421302.",
+    phone: "9013870636",
+    email: "contact@kcataxcare.com",
     location: { lat: 28.6407, lng: 77.2136 },
   },
 ];
@@ -76,13 +76,13 @@ const ContactPage = () => {
           </h1>
           <div className="mb-4">
             <p className="text-xl gap-2 flex items-center ">
-              <FaMapMarkerAlt /> {selectedOffice.address}
+              <FaMapMarkerAlt className="text-teal-600 font-medium" /> {selectedOffice.address}
             </p>
             <p className="text-xl gap-2 flex items-center">
-              <FaPhoneAlt/> {selectedOffice.phone}
+              <FaPhoneAlt className="text-teal-600 font-medium"/> {selectedOffice.phone}
             </p>
             <p className="text-xl gap-2 flex items-center">
-              <FaEnvelope/> {selectedOffice.email}
+              <FaEnvelope className="text-teal-600 font-medium"/> {selectedOffice.email}
             </p>
           </div>
           <div className="w-[90%] m-auto">

@@ -1,16 +1,16 @@
 import React from "react";
 import kalpana from "../../Asset/kalpana_chauhan.jpeg";
 import lalit from "../../Asset/lalit_tomar.jpeg";
-import Breadcrumb from "../../Components/Breadcrumb";
+import Breadcrumb from "../../components/Breadcrumb";
 
 const About = () => {
   return (
-    <div className="min-h-screen w-full h-full bg-gray-100 flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen w-full h-full bg-slate-100 flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8">
       <Breadcrumb items={[{ name: "Home", link: "/" }, { name: "About" }]} />
-      <div className=" space-y-8 p-10 bg-white shadow-lg rounded-lg">
+      <div className=" space-y-8 w-[85%] p-10 bg-slate-100 rounded-lg">
         <div className="text-center">
           <h2 className="text-4xl font-extrabold text-gray-900">About Us</h2>
-          <p className="mt-4 text-lg text-gray-600">
+          <p className="mt-4  text-lg text-gray-600">
             Kalpana Chauhan & Associates is a Chartered Accountancy Firm,
           established in <strong> August 2010</strong>, having its <strong> Firm Registration No.(FRN)
             015585C, Pan No AALFK6521F</strong>. The firm is headed by CA Lalit Tomar and

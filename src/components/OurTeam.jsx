@@ -3,7 +3,7 @@ import { Link} from "react-router-dom";
 import kalpana from "../Asset/kalpana_chauhan.jpeg";
 import lalit from "../Asset/lalit_tomar.jpeg";
 import mohit from "../Asset/mohit_tripathi.jpeg";
-import user from "../Asset/user.png";
+import Jitendra from "../Asset/jitendra.jpeg";
 export default function OurTeam() {
 
   const teamMembers = [
@@ -37,13 +37,13 @@ export default function OurTeam() {
       position: "Founding Partner",
       mobile: "8826897210",
       email: "abc@gmail.com",
-      image: user, // Replace with actual image path
+      image: Jitendra, // Replace with actual image path
     },
     // Add more team members here
   ];
 
   return (
-    <section className="w-full h-full bg-slate-100 mt-[4rem]">
+    <section className="w-full h-full bg-slate-100 ">
       <div className="w-full flex flex-col items-center">
         <h2 className="text-4xl text-slate-800 font-bold mb-8">
           Founding Partners
@@ -56,7 +56,7 @@ export default function OurTeam() {
             >
               <div className="w-[40%] rounded-md flex justify-center items-center">
                 <img
-                  className="w-[90%] p-2 h-auto object-cover"
+                  className="w-[80%] p-2 h-[90%] items-center justify-center object-cover"
                   src={member.image}
                   alt={member.name}
                 />
@@ -76,7 +76,7 @@ export default function OurTeam() {
                 <p className="text-sm text-slate-600 mt-1">
                   E-mail: {member.email}
                 </p>
-                <button className="mt-4 py-2 px-3 w-[60%] bg-slate-800 text-white rounded hover:bg-slate-900 transition duration-200">
+                <button className="mt-4 py-2 px-3 w-[60%] bg-teal-600 text-white rounded hover:bg-teal-800 transition duration-200">
                   <Link to="#">
                   Explore More
                   </Link>

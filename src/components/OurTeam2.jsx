@@ -61,7 +61,7 @@ export default function OurTeam() {
                 <p className="text-sm text-slate-600 mt-1">
                   E-mail: {member.email}
                 </p>
-                <button className="mt-4 py-2 px-3 w-[60%] bg-slate-800 text-white rounded hover:bg-slate-900 transition duration-200">
+                <button className="mt-4 py-2 px-3 w-[60%] bg-teal-600 text-white rounded hover:bg-teal-900 transition duration-200">
                   <Link to="#">
                   Explore More
                   </Link>

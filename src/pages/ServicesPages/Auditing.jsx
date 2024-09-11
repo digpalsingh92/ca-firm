@@ -1,66 +1,132 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Breadcrumb from "../../Components/Breadcrumb";
-import FoundersMessage from "../../Components/FoundersMessage";
+import Breadcrumb from "../../components/Breadcrumb";
+import FoundersMessage from "../../components/FoundersMessage";
+import BirdThumbnail from "../../Asset/BirdThumbnail.jpg";
+import WhyUsSection from "../../components/WhyUsSection";
 
-const BulletPoints = {
-  items: [
-    "Statutory Audit",
-    "Internal Audit",
-    "Internal Financial Control (IFC) over financial reporting Audit",
-    "Bank Concurrent Audit",
-    "Bank Statutory Audit",
-    "Income Tax Audit u/s 44 AB",
-    "Transfer Pricing Audit u/s 92 E",
-    "GST Audit",
-    "Form 10B Audit in case of NGO",
-    "Forensic Audit",
-    "Due diligence",
-    "Certification work",
-    "Audit of Form 15CB of Income Tax Act and Issue Form 15CA",
-    "SOX Compliance to ensure adequate internal controls are in place and effective",
-  ],
-};
+const services = [
+  {
+    name: "Auditing & Assurance Services",
+    description:
+      "With businesses seeking greater success on a global scale, it is becoming more and more important to set the right regulatory practices in auditing and assurance. This is where we come into the picture and assist you in meeting these demands with a thorough auditing and seamless assurance. We not just provide great services for you and your organization, but also give way to clear and transparent information, which is beneficial for your stakeholders and investors.",
+    image: BirdThumbnail,
+    subServices: [
+      {
+        name: "Statutory Audit",
+        about:
+          "A statutory audit is a legally required review of the accuracy of a company's financial statements and records.",
+      },
+      {
+        name: "Internal Audit",
+        about:
+          "An internal audit provides independent assurance that the key risks facing an organization have been identified and managed, ensuring systems and controls are robust.",
+        subServices: [
+          {
+            name: "Stock Audit",
+            about:
+              "Stock Audit is necessarily required to be conducted at the borrower's place for obvious reasons. It helps in understanding the entity's banking operations.",
+          },
+          {
+            name: "Process Audit",
+            about:
+              "Process Audit checks the effectiveness and efficiency of existing business processes, identifying bottlenecks and opportunities for improvement.",
+          },
+        ],
+      },
+      {
+        name: "Income Tax Audit",
+        about:
+          "Income Tax Audit u/s 44 AB ensures that records of businesses are properly maintained for taxation purposes.",
+      },
+    ],
+  },
+];
 
 export default function Auditing() {
+  const [openSubService, setOpenSubService] = useState(null); // Manage open sub-service
+
+  const toggleSubService = (index) => {
+    if (openSubService === index) {
+      setOpenSubService(null); // Close if already open
+    } else {
+      setOpenSubService(index); // Open the clicked sub-service
+    }
+  };
+
   return (
     <section>
       <div className="w-full h-full bg-white">
         <Breadcrumb
           items={[
             { name: "Home", link: "/" },
-            { name: "services", link: "/services" },
-            { name: "auditing-assurance" },
+            { name: "Services", link: "/services" },
+            { name: "Auditing & Assurance" },
           ]}
         />
-        <div className="w-[100%] h-[80%] mt-4 mb-10 flex justify-center items-center ">
-          <div className="w-[80%] h-[80%] flex flex-col p-4 items-center rounded-md  ">
-            <h1 className="text-3xl font-bold mb-4">
-              Auditing & Assurance Services
-            </h1>
-            <div className=" w-full flex flex-col justify-center items-center">
-              <p className=" w-[70%] text-left">
-                With businesses seeking greater success on a global scale, it is
-                becoming more and more important to set the right regulatory
-                practices in auditing and assurance. This is where we come into
-                the picture and assist you in meeting these demands with a
-                thorough auditing and seamless assurance. We not just provide
-                great services for you and your organization, but also give way
-                to clear and transparent information, which is beneficial for
-                your stakeholders and investors.
-              </p>
-              <ul className="list-disc pl-5 mb-4">
-                {}
-              </ul>
+        {services.map((service, index) => (
+          <div
+            key={index}
+            className="w-[100%] h-[80%] mt-4 mb-10 flex p-2 justify-center items-center"
+          >
+            {/* Image Section */}
+            <div className="w-[30%] h-[30%] flex flex-col p-4 items-center rounded-md">
+              <img
+                className="w-[70%] h-[70%] flex ml-4 items-center justify-center"
+                src={service.image}
+                alt={`${service.name} image`}
+              />
             </div>
-            <Link
-              to={`/contact`}
-              className="mt-4 inline-block h-[8%] w-[10%] items-center bg-slate-800 text-white py-2 px-4 rounded-md shadow hover:bg-teal-600"
-            >
-              Enquire Now
-            </Link>
+
+            {/* Content Section */}
+            <div className="w-[80%] h-[80%] flex flex-col p-4 items-center rounded-md">
+              <h1 className="text-3xl font-bold mb-4">{service.name}</h1>
+              <div className="w-full flex flex-col justify-center items-center">
+                <p className="w-[70%] text-left mb-4">{service.description}</p>
+
+                {/* Sub-services with dropdown */}
+                <ul className="list-disc pl-5 mb-4 w-[70%]">
+                  {service.subServices.map((subService, subIndex) => (
+                    <li key={subIndex} className="mb-2">
+                      <div
+                        className="flex justify-between items-center cursor-pointer"
+                        onClick={() => toggleSubService(subIndex)}
+                      >
+                        <strong>{subService.name}</strong>
+                        {/* Toggle Icon (Optional) */}
+                        <span>{openSubService === subIndex ? "-" : "+"}</span>
+                      </div>
+                      {openSubService === subIndex && (
+                        <div className="mt-2">
+                          <p>{subService.about}</p>
+                          {/* Nested Sub-services */}
+                          {subService.subServices && (
+                            <ul className="list-inside list-disc pl-5 mt-2">
+                              {subService.subServices.map((nestedService, nestedIndex) => (
+                                <li key={nestedIndex}>
+                                  <strong>{nestedService.name}</strong>: {nestedService.about}
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </div>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Enquire Button */}
+              <Link
+                to={`/contact`}
+                className="mt-4 inline-block h-[8%] w-[8rem] items-center bg-slate-800 text-white py-2 px-4 rounded-md shadow hover:bg-teal-600"
+              >
+                Enquire Now
+              </Link>
+            </div>
           </div>
-        </div>
+        ))}
+        <WhyUsSection />
         <FoundersMessage />
       </div>
     </section>

@@ -2,12 +2,12 @@ import React from "react";
 
 const ScrollableSection = ({ title, children }) => {
   return (
-    <div className="flex flex-col w-full p-4 bg-white shadow-lg rounded-lg">
-      <div className="flex justify-between items-center bg-yellow-600 text-white px-4 py-2 rounded-t-lg">
+    <div className="flex flex-col w-full p-4 bg-slate-50 shadow-lg rounded-lg">
+      <div className="flex justify-between items-center bg-teal-600 text-white px-4 py-2 rounded-t-lg">
         <h3 className="text-lg font-bold">{title}</h3>
-        <div className="h-4 w-4 bg-yellow-600 transform rotate-45 -translate-y-1.5"></div>
+        <div className="h-4 w-4 bg-teal-600 transform rotate-45 -translate-y-1.5"></div>
       </div>
-      <div className="overflow-y-auto max-h-60 p-4"> {/* Increased height from max-h-48 to max-h-60 */}
+      <div className="overflow-y-auto max-h-60 p-4">
         {children}
       </div>
     </div>
@@ -16,7 +16,7 @@ const ScrollableSection = ({ title, children }) => {
 
 const Dashboard = () => {
   return (
-    <div className="min-h-[60vh] bg-slate-50 flex items-start justify-center mt-6 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-[60vh] bg-slate-100 flex items-start justify-center mt-6 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl w-full h-[90%] grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Latest News Section */}
         <ScrollableSection title="Latest News">

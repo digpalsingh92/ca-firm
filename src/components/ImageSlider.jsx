@@ -43,7 +43,7 @@ const ImageSlider = ({
   const currentSlide = useMemo(() => slides[currentIndex], [currentIndex, slides]);
 
   return (
-    <div {...handlers} className="relative w-full h-full overflow-hidden">
+    <div {...handlers} className="relative mt-5 w-full h-full overflow-hidden">
       <div
         className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white z-10 cursor-pointer bg-gray-700 p-2 rounded-full"
         onClick={goToPrevious}

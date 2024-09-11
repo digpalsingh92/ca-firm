@@ -1,23 +1,23 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
-import Home from "./Pages/Home";
-import About from "./Pages/About/About";
-import Services from "./Pages/Services";
-import Contact from "./Pages/Contact";
-import Team from "./Pages/Team";
-import Accounting from "./Pages/ServicesPages/Accounting";
-import Auditing from "./Pages/ServicesPages/Auditing";
-import CompanyLaw from "./Pages/ServicesPages/CompanyLaw";
-import ForeignCollaboratives from "./Pages/ServicesPages/ForeignCollaboratives";
-import GST from "./Pages/ServicesPages/GST";
-import IncomeTax from "./Pages/ServicesPages/IncomeTax";
-import NGOs from "./Pages/ServicesPages/NGOs";
-import StartupServices from "./Pages/ServicesPages/StartupServices";
-import ImportExportConsultancy from "./Pages/ServicesPages/ImportExportConsultancy";
-import BPOs from "./Pages/ServicesPages/BPOs";
-import Finance from "./Pages/ServicesPages/Finance";
-import Career from "./Pages/Career";
-import Overview from "./Pages/About/Overview";
+import Home from "./pages/Home";
+import About from "./pages/About/About";
+import Services from "./pages/Services";
+import Contact from "./pages/Contact";
+import Team from "./pages/Team";
+import Accounting from "./pages/ServicesPages/Accounting";
+import Auditing from "./pages/ServicesPages/Auditing";
+import CompanyLaw from "./pages/ServicesPages/CompanyLaw";
+import ForeignCollaboratives from "./pages/ServicesPages/ForeignCollaboratives";
+import GST from "./pages/ServicesPages/GST";
+import IncomeTax from "./pages/ServicesPages/IncomeTax";
+import NGOs from "./pages/ServicesPages/NGOs";
+import StartupServices from "./pages/ServicesPages/StartupServices";
+import ImportExportConsultancy from "./pages/ServicesPages/ImportExportConsultancy";
+import BPOs from "./pages/ServicesPages/BPOs";
+import Finance from "./pages/ServicesPages/Finance";
+import Career from "./pages/Career";
+import Overview from "./pages/About/Overview";
 
 export default function App() {
   return (

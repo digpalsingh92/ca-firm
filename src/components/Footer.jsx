@@ -10,7 +10,7 @@ export default function Footer() {
     <footer className="bg-gray-800 mt-6 p-5 rounded-lg text-white">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
-          <h2 className="text-lg font-bold mb-4 text-teal-500">Kalpana chauhan & Associates</h2>
+          <h2 className="text-lg font-bold mb-4 text-teal-500">Kalpana Chauhan & Associates</h2>
           <p className="text-sm">
             We are a full-service Chartered Accountancy Firm serving clients located in India. We are located
             in the Delhi / NCR region of Delhi, Noida & Gurugram.
@@ -47,23 +47,14 @@ export default function Footer() {
               on Noida-Greater Noida Expressway
             </p>
           </div>
-          <div className="mb-4">
-            <h3 className="text-md font-semibold">Gurgaon</h3>
-            <p className="text-sm">
-              Corporatedge Cyber Hub,<br />
-              Level 1, Building 10A, Cyber Hub,<br />
-              DLF Cyber City, Gurugram,<br />
-              Haryana - 122002
-            </p>
-          </div>
-          <h3 className="text-md font-semibold">Working Hours</h3>
+          <h3 className="text-md font-semibold text-teal-600">Working Hours</h3>
           <p className="text-sm">Mon - Sat 9:00AM - 6:00PM IST</p>
         </div>
         <div>
           <h2 className="text-lg text-teal-600 font-bold mb-4">Contact Us</h2>
           <p className="text-sm mb-4">
-            <span className="block">Call: +91-</span>
-            <span className="block">Email: </span>
+            <span className="block">Call: +91 - 9013870636</span>
+            <span className="block">Email: contact@kcataxcare.com </span>
           </p>
           <h2 className="text-lg text-teal-600 font-bold mb-4">Stay in Touch</h2>
           <div className="flex space-x-4">
@@ -83,7 +74,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="container mx-auto text-sm text-teal-500 mt-10 text-center border-t border-gray-700 pt-6">
-        <p>&copy; 2024 Kalpana chauhan & Associates. All rights reserved.</p>
+        <p>&copy; 2024 Kalpana Chauhan & Associates. All rights reserved.</p>
         <p>All material presented herein is intended for information purposes only.</p>
         <div className="mt-4">
           <Link to="#" className="text-gray-400 hover:text-teal-500 mx-2">Privacy Policy</Link>

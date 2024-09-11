@@ -1,6 +1,34 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
+const services =[
+  {
+    name : "Goods & Service Tax (GST)",
+    description: "The GST journey in India began in the year 2017, and since then, it has come a long way in shaping our economy. All matters like registration, form filing, application for refund, etc. "
+  },
+  {
+    name : "Income Tax Return Filing",
+    description: "Income Tax Return Filing is a process of filing the details of your income and tax paid to the government for a particular financial year. "
+  },
+  {
+    name : "Company Law Matters Consultancy",
+    description: "Company Law Matters Consultancy is a service that helps businesses comply with the Companies Act, 2013, and other related laws. "
+  },
+  {
+    name : "Finance Services",
+    description: "Finance Services are services that help businesses manage their finances effectively. "
+  },
+  {
+    name : "Taxation Services",
+    description: "Taxation Services are services that help businesses comply with tax laws and regulations. "
+  },
+  {
+    name: "Payroll Services",
+    description: "Payroll Services are services that help businesses manage their payroll effectively. "
+  }
+]
+
 export default function OurServices() {
   return (
     <>
@@ -12,35 +40,18 @@ export default function OurServices() {
                 Services we Offer
               </span>
             </div>
-            <div className="w-full flex flex-wrap gap-3 justify-center items-center">
-              {[
-                "Goods & Service Tax (GST) Filing",
-                "Income Tax Return Filing",
-                "Company Law Matters Consultancy",
-              ].map((service, index) => (
+            <div className="w-full flex flex-wrap gap-5 justify-center items-center">
+              {services.map((service, index) => (
                 <div
                   key={index}
-                  className="w-full md:w-[30%] h-[280px] box-border shadow-lg shadow-slate-400 rounded-md flex justify-center items-center transition duration-300 group hover:bg-teal-600 hover:h-[300px] p-4"
+                  className="w-full md:w-[30%] h-[280px] box-border shadow-md shadow-slate-400 rounded-md flex justify-center items-center transition duration-300 group hover:bg-teal-600 hover:h-[300px] p-4"
                 >
                   <div className="w-full flex gap-3 flex-col items-center">
                     <div className="w-full h-full flex flex-col gap-3 justify-center items-center mt-3">
                       <span className="text-xl font-bold text-slate-800 group-hover:text-white text-center">
-                        {service}
+                        {service.name}
                       </span>
-                      {/* <div className="flex flex-col justify-center items-center mx-5">
-                        {[
-                          "Income Tax Return (ITR) is a form that an individual submits to the Income Tax Department of India to file information about his income and taxes payable during that year.",
-                          "The GST journey in India began in the year 2000, and since then, has come a long way in shaping...",
-                          "The Companies Act, 2013, is an Act of the Parliament of India which regulates incorporation of companies, responsibilities of companies, directors, dissolution of companies, etc.",
-                        ].map((desc, index) => (
-                          <p
-                            key={index}
-                            className="text-lg font-light text-center text-slate-800 group-hover:text-white truncate"
-                          >
-                            {desc}
-                          </p>
-                        ))}
-                      </div> */}
+                      <p className="text-center w-[70] text-sm text-slate-600 group-hover:text-white">{service.description}</p>
                     </div>
                   </div>
                 </div>

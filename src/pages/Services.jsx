@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Breadcrumb from "../Components/Breadcrumb";
-import FoundersMessage from "../Components/FoundersMessage";
+import Breadcrumb from "../components/Breadcrumb";
+import FoundersMessage from "../components/FoundersMessage";
 
 const services = [
   { id: 1, urlend: "accounting", name: "Accounting" },

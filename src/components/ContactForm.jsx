@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import emailjs from "emailjs-com";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -20,7 +21,25 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+
+    // EmailJS Configuration
+    emailjs
+      .send(
+        'service_uim3edt',  // EmailJS Service ID
+        'template_klpja9l',  // EmailJS Template ID
+        formData,            // The data you want to send
+        'Js-c-ETvtsyhOXCV6'       // Your User ID from EmailJS
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+
+    // Clear the form
     setFormData({
       name: "",
       email: "",
@@ -29,18 +48,15 @@ const ContactForm = () => {
       country: "",
       city: "",
       message: ""
-    }); // Clear the form after submission
+    });
   };
 
   return (
     <div className="container mx-auto p-8">
       <div className="flex flex-col lg:flex-row justify-between bg-white shadow-lg p-6 rounded-lg">
         <div className="bg-teal-500 text-white p-8 rounded-lg lg:w-1/3">
-          <h2 className="text-2xl font-bold mb-4">Kalpana Chauhan and associates
-          </h2>
-          <p className="mb-4">
-            For any query, concern or financial advice and solution, get in touch with us today!
-          </p>
+          <h2 className="text-2xl font-bold mb-4">Kalpana Chauhan and associates</h2>
+          <p className="mb-4">For any query or concern, get in touch with us today!</p>
           <h3 className="font-bold">Opening Hour</h3>
           <p>Mon - Sat: 9:30 am to 6 pm</p>
         </div>
@@ -55,14 +71,13 @@ const ContactForm = () => {
               className="p-2 rounded border border-gray-300"
               required
             />
-             <input
+            <input
               type="text"
               name="phone"
               placeholder="Phone No."
               value={formData.phone}
-              className="p-2 rounded border border-gray-300"
               onChange={handleChange}
-
+              className="p-2 rounded border border-gray-300"
               required
             />
             <input
@@ -72,10 +87,8 @@ const ContactForm = () => {
               value={formData.email}
               onChange={handleChange}
               className="col-span-1 lg:col-span-2 p-2 rounded border border-gray-300"
-
               required
             />
-           
             <select
               name="service"
               value={formData.service}
@@ -115,10 +128,6 @@ const ContactForm = () => {
               rows="4"
               required
             ></textarea>
-            {/* <div className="col-span-1 lg:col-span-2 flex items-center">
-              <input type="checkbox" className="mr-2" required />
-              <span>I'm not a robot</span>
-            </div> */}
             <button
               type="submit"
               className="col-span-1 lg:col-span-2 bg-teal-500 text-white p-2 rounded hover:bg-teal-700"

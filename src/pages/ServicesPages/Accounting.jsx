@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Breadcrumb from "../../Components/Breadcrumb";
-import FoundersMessage from "../../Components/FoundersMessage";
+import Breadcrumb from "../../components/Breadcrumb";
+import FoundersMessage from "../../components/FoundersMessage";
 export default function Accounting() {
   return (
     <section >
