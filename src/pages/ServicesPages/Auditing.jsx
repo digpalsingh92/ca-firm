@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Breadcrumb from "../../components/Breadcrumb";
 import FoundersMessage from "../../components/FoundersMessage";
-import BirdThumbnail from "../../Asset/BirdThumbnail.jpg";
+import AuditingImage from "../../Asset/Auditing.webp";
 import WhyUsSection from "../../components/WhyUsSection";
 
 const services = [
@@ -10,7 +10,7 @@ const services = [
     name: "Auditing & Assurance Services",
     description:
       "With businesses seeking greater success on a global scale, it is becoming more and more important to set the right regulatory practices in auditing and assurance. This is where we come into the picture and assist you in meeting these demands with a thorough auditing and seamless assurance. We not just provide great services for you and your organization, but also give way to clear and transparent information, which is beneficial for your stakeholders and investors.",
-    image: BirdThumbnail,
+    image: AuditingImage,
     subServices: [
       {
         name: "Statutory Audit",
@@ -67,12 +67,12 @@ export default function Auditing() {
         {services.map((service, index) => (
           <div
             key={index}
-            className="w-[100%] h-[80%] mt-4 mb-10 flex p-2 justify-center items-center"
+            className="w-[80%] h-[100%] mx-auto flex p-2 justify-center items-center"
           >
             {/* Image Section */}
             <div className="w-[30%] h-[30%] flex flex-col p-4 items-center rounded-md">
               <img
-                className="w-[70%] h-[70%] flex ml-4 items-center justify-center"
+                className="w-[90%] h-[90%] rounded-md flex ml-4 items-center justify-center"
                 src={service.image}
                 alt={`${service.name} image`}
               />
@@ -80,7 +80,7 @@ export default function Auditing() {
 
             {/* Content Section */}
             <div className="w-[80%] h-[80%] flex flex-col p-4 items-center rounded-md">
-              <h1 className="text-3xl font-bold mb-4">{service.name}</h1>
+              <h1 className="text-3xl font-medium mb-4">{service.name}</h1>
               <div className="w-full flex flex-col justify-center items-center">
                 <p className="w-[70%] text-left mb-4">{service.description}</p>
 
@@ -99,7 +99,6 @@ export default function Auditing() {
                       {openSubService === subIndex && (
                         <div className="mt-2">
                           <p>{subService.about}</p>
-                          {/* Nested Sub-services */}
                           {subService.subServices && (
                             <ul className="list-inside list-disc pl-5 mt-2">
                               {subService.subServices.map((nestedService, nestedIndex) => (

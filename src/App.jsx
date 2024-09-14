@@ -12,12 +12,12 @@ import ForeignCollaboratives from "./pages/ServicesPages/ForeignCollaboratives";
 import GST from "./pages/ServicesPages/GST";
 import IncomeTax from "./pages/ServicesPages/IncomeTax";
 import NGOs from "./pages/ServicesPages/NGOs";
-import StartupServices from "./pages/ServicesPages/StartupServices";
+import OtherServices from "./pages/ServicesPages/OtherServices";
 import ImportExportConsultancy from "./pages/ServicesPages/ImportExportConsultancy";
-import BPOs from "./pages/ServicesPages/BPOs";
 import Finance from "./pages/ServicesPages/Finance";
 import Career from "./pages/Career";
 import Overview from "./pages/About/Overview";
+import PayrollProcessing from "./pages/ServicesPages/PayrollProcessing";
 
 export default function App() {
   return (
@@ -33,12 +33,12 @@ export default function App() {
           <Route path="/services/income-tax" element={<IncomeTax />} />
           <Route path="/services/gst" element={<GST />} />
           <Route path="/services/company-law-matters" element={<CompanyLaw />} />
-          <Route path="/services/bpo" element={<BPOs />} />
           <Route path="/services/finance" element={<Finance />} />
           <Route path="/services/foreign-collaborations-services" element={<ForeignCollaboratives />} />
           <Route path="/services/trust-ngo" element={<NGOs />} />
-          <Route path="/services/startup-services" element={<StartupServices />} />
+          <Route path="/services/payroll" element={<PayrollProcessing />} />
           <Route path="/services/import-export-consultancy" element={<ImportExportConsultancy />} />
+          <Route path="/services/other-services" element={<OtherServices />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/our-team" element={<Team />} />
           <Route path="/career" element={<Career />} />

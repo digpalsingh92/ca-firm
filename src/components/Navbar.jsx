@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import Logo from "../Asset/logo.png";
+// import Logo from "../Asset/logo.png";
+import Logo from "../Asset/Logo.gif";
 
 const navItems = [
   { name: "Home" },
@@ -25,12 +26,12 @@ const navItems = [
       { name: 'Income Tax', url: "income-tax" },
       { name: 'Goods & Services Tax (GST)', url: "gst" },
       { name: 'Company Law Matters Consultancy', url: "company-law-matters" },
-      { name: 'Startup Services', url: "startup-services" },
       { name: 'Societies and Trust (NGO)', url: "trust-ngo" },
       { name: 'Foreign Collaborations Services', url: "foreign-collaborations-services" },
       { name: 'Import - Export Consultancy', url: "import-export-consultancy" },
       { name: 'Finance', url: "finance" },
-      { name: 'Business Process Outsources (BPO)', url: "bpo" },
+      { name: 'Payroll Processing', url: "payroll" },
+      { name: 'Other Services', url: "other-services" },
     ],
   },
   {
@@ -48,11 +49,11 @@ const navItems = [
 export default function Navbar() {
   return (
     <nav className="bg-slate-200 shadow-lg">
-      <div className="container mx-auto flex justify-between items-center p-1">
-        <div className="logo">
-          <img src={Logo} alt="Logo" className="w-[120px]" />
+      <div className=" w-full mx-auto flex justify-between items-center px-5">
+        <div className="logo flex-grow-0">
+          <img src={Logo} alt="Logo" className="w-[120px] mt-3 items-center justify-center" />
         </div>
-        <div className="hidden md:block">
+        <div className="hidden md:block px-5">
         <ul className="flex gap-4 space-x-6">
           {navItems.map((item, index) => (
             <li key={index} className="relative group">

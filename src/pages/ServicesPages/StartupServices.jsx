@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Breadcrumb from "../../components/Breadcrumb";
 import FoundersMessage from "../../components/FoundersMessage";
+import startup from "../../Asset/startup.webp";
+import WhyUsSection from "../../components/WhyUsSection";
 
 const BulletPoints = {
   items: [
@@ -10,16 +11,11 @@ const BulletPoints = {
   "Incorporation of Company and LLP (Limited Liability Partnership)",
   "Setting up Policies and Procedures",
   "Book Keeping & Accountancy Services",
-  "GST Compliances",
-  "TDS Compliances",
-  "ROC Compliances",
+  "GST Compliances, ROC Compliances",
+  "TDS Compliances, Payroll Services",
+  "Pricing, Cash flow analysis",
   "Preparation and Filing of Income Tax Return",
-  "Payroll Services",
-  "Pricing",
-  "Cash flow analysis",
   "Audit support and preparation",
-  "Financial forecasting",
-  "Budget creation"
   ]
 }
 
@@ -27,15 +23,14 @@ export default function StartupServices() {
   return (
     <section>
       <div className="w-full h-full bg-white">
-        <Breadcrumb
-          items={[
-            { name: "Home", link: "/" },
-            { name: "services", link: "/services" },
-            { name: "startup-services" },
-          ]}
-        />
-        <div className="w-[100%] h-[80%] mt-4 mb-10 flex justify-center items-center ">
-          <div className="w-[80%] h-[80%] flex flex-col p-4 items-center rounded-md  ">
+        <div className="w-[90%] h-[100%] mx-auto flex justify-center items-center ">
+        <div className="w-[30%] h-[30%] rounded-md  my-4 flex flex-col py-4 items-center">
+              <img
+                className="w-[90%] h-[90%] rounded-md relative flex ml-4 items-center justify-center"
+                src={startup}
+              />
+            </div>
+          <div className="w-[90%] h-[100%] flex flex-col p-4 items-center rounded-md  ">
             <h1 className="text-3xl font-bold mb-4">
               Startup Services
             </h1>
@@ -60,12 +55,13 @@ export default function StartupServices() {
             </div>
             <Link
               to={`/contact`}
-              className="mt-4 inline-block h-[8%] w-[10%] items-center bg-slate-800 text-white py-2 px-4 rounded-md shadow hover:bg-teal-600"
+              className="mt-4 mb-4 inline-block h-[9%] w-[12%] items-center bg-slate-800 text-white py-2 px-4 rounded-md shadow hover:bg-teal-600"
             >
               Enquire Now
             </Link>
           </div>
         </div>
+        <WhyUsSection />
         <FoundersMessage />
       </div>
     </section>

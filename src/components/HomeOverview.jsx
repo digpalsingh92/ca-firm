@@ -1,12 +1,11 @@
 import React from "react";
-import BirdThumbnail from "../Asset/BirdThumbnail.jpg";
-
+import logo from "../Asset/logo.webp";
 export default function HomeOverview() {
   return (
-    <section className="mt-10 bg-slate-50 p-2">
-      <div className="flex justify-center p-2 gap-10 items-center w-[70%] m-auto h-full">
+    <section className="mt-10 bg-slate-50 p-4">
+      <div className="flex justify-center p-3 gap-10 items-center w-[70%] m-auto h-full">
         <div className="flex w-[30%] justify-center items-center">
-          <img className="shadow-sm shadow-slate-700" src={BirdThumbnail} alt="Bird" />
+          <img className="shadow-sm shadow-slate-700" src={logo} alt="Kalpana Chauhan & Associates" />
         </div>
         <div className=" w-[60%] flex gap-4 flex-col h-full ">
           <h1 className="text-xl items-center ml-2 font-semibold">Best Chartered Accountant in NCR region</h1>

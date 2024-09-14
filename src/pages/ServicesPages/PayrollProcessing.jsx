@@ -2,31 +2,33 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Breadcrumb from "../../components/Breadcrumb";
 import FoundersMessage from "../../components/FoundersMessage";
-import incomeImage from "../../Asset/income-tax.webp";
+import payrollImage from "../../Asset/payroll-process.webp";
 import WhyUsSection from "../../components/WhyUsSection";
 
 const services = [
   {
-    name: "Income Tax",
+    name: "Payroll Processing",
     description:
-    " The tax landscapes have changed a great deal over the years, and the complexity of change in the tax scenario continues to grow at a fast pace. This change in the corporate and private space has brought about a greater shift in the way Tax authorities work, and therefore it is necessary to have the right procedures in place when it comes to taxes. Our trained Chartered Accountants provide easy and hassle free ways to help manage tax compliances.",
-    image: incomeImage,
+"payroll process involves calculating what is due to the employees for a specific payroll cycle after adjusting the required deductions like employees' PF contribution, TDS, meal coupons, etc. The payroll cycle is the gap between two salary disbursements of an employee",
+    image: payrollImage,
     subServices: [
       {
-        name: "Income Tax Services",
+        name: "Payroll Processing Services",
         about: [
-              "Survey Search & Seizer Consultancy",
-              "Appearance before Investigation Wing of Income Tax Department (Section 153A to 153C cases)",
-              "Appearance before Central Board of Direct Taxes (CBDT) and before Ministry of Finance",
-              "Transfer Pricing matters-TP Study, TP Audit, TP Assessment & Objections with DRP",
-              "Tax Evasion Petitions, CPGRAMS, raising grievances for long pending matters",
-            ],
-      }
+          "Salary compositions/ break up",
+          "	Preparation of salary masters",
+          "	Preparation of monthly payroll sheets",
+          "	Tax withholding from the payroll",
+          "	Preparing secure pay slips",
+          "	Arranging the payment of salaries by preparing Bank transfer advice in bank specific formats",
+          "	Taking care of the all the Income Tax forms as well"
+        ],
+      },
     ],
   },
 ];
 
-export default function Auditing() {
+export default function PayrollProcessing() {
   const [openSubService, setOpenSubService] = useState(null); // Manage open sub-service
 
   const toggleSubService = (index) => {
@@ -44,7 +46,7 @@ export default function Auditing() {
           items={[
             { name: "Home", link: "/" },
             { name: "Services", link: "/services" },
-            { name: "Income-tax" },
+            { name: "Auditing & Assurance" },
           ]}
         />
         {services.map((service, index) => (
@@ -55,15 +57,17 @@ export default function Auditing() {
             {/* Image Section */}
             <div className="w-[30%] h-[30%] flex flex-col p-4 items-center rounded-md">
               <img
-                className="w-[90%] h-[100%] rounded-md flex ml-4 items-center justify-center"
+                className="w-[90%] h-[90%] rounded-md flex ml-4 items-center justify-center"
                 src={service.image}
+                alt={`${service.name} image`}
               />
             </div>
+
             {/* Content Section */}
-            <div className="w-[100%] h-[100%] flex flex-col p-4 items-center rounded-md">
+            <div className="w-[90%] h-[100%] flex flex-col p-4 items-center rounded-md">
               <h1 className="text-3xl font-medium mb-4">{service.name}</h1>
               <div className="w-full flex flex-col justify-center items-center">
-                <p className="w-[70%] text-left mb-4">{service.description}</p>
+                <p className="w-[75%] text-left mb-4">{service.description}</p>
 
                 {/* Sub-services with dropdown */}
                 <ul className="list-disc pl-5 mb-4 w-[70%]">
@@ -110,4 +114,3 @@ export default function Auditing() {
     </section>
   );
 }
-

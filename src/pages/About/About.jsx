@@ -1,6 +1,6 @@
 import React from "react";
-import kalpana from "../../Asset/kalpana_chauhan.jpeg";
-import lalit from "../../Asset/lalit_tomar.jpeg";
+import kalpana from "../../Asset/kalpana_chauhan.webp";
+import lalit from "../../Asset/lalit_tomar.webp";
 import Breadcrumb from "../../components/Breadcrumb";
 
 const About = () => {

@@ -32,7 +32,7 @@ const Career = () => {
               <h2 className="text-2xl font-bold text-gray-800">{job.title}</h2>
               <p className="text-gray-600">{job.location} | {job.type}</p>
               <p className="mt-4 text-gray-700">{job.description}</p>
-              <button className="mt-6 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+              <button className="mt-6 bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-800">
                 Apply Now
               </button>
             </div>

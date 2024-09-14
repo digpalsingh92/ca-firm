@@ -2,17 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Breadcrumb from "../../components/Breadcrumb";
 import FoundersMessage from "../../components/FoundersMessage";
-
+import CompanyImage from "../../Asset/company-law.webp";
+import WhyUsSection from "../../components/WhyUsSection";
 const BulletPoints = {
   items: [
     "Formation of company in India, viz. Private Limited, Public Limited, wholly owned subsidiary company, One Person Company (OPC), Limited Liability Partnership (LLP), etc.",
-    "ll matters related with Registrar of Companies (ROC), Regional Director (RD) & National Company Law Tribunal (NCLT)",
-    "aintenance & compliance of Statutory Records",
-    "erger & acquisitions",
-    "orporate restructuring",
-    "aluation of Equity Shares",
-    "BRL filings",
-    "onsultancy in above matters",
+    "All matters related with Registrar of Companies (ROC), Regional Director (RD) & National Company Law Tribunal (NCLT)",
+    "Maintenance & compliance of Statutory Records",
+    "Merger & acquisitions",
+    "Corporate restructuring",
+    "Valuation of Equity Shares",
+    "Consultancy in above matters",
   ],
 };
 
@@ -27,7 +27,13 @@ export default function CompanyLaw() {
             { name: "company-law-matters" },
           ]}
         />
-        <div className="w-[100%] h-[80%] mt-4 mb-10 flex justify-center items-center ">
+        <div className="w-[100%] h-[80%] mx-auto flex justify-center items-center ">
+        <div className="w-[30%] h-[30%] flex flex-col p-4 items-center rounded-md">
+              <img
+                className="w-[90%] h-[90%] rounded-md flex ml-4 items-center justify-center"
+                src={CompanyImage}
+              />
+            </div>
           <div className="w-[80%] h-[80%] flex flex-col p-4 items-center rounded-md  ">
             <h1 className="text-3xl font-bold mb-4">
               Company Law Consultancy | Expert Advice & Solutions
@@ -49,12 +55,13 @@ export default function CompanyLaw() {
             </div>
             <Link
               to={`/contact`}
-              className="mt-4 inline-block h-[8%] w-[10%] items-center bg-slate-800 text-white py-2 px-4 rounded-md shadow hover:bg-teal-600"
+              className="mt-4 inline-block h-[8%] w-[12%] items-center bg-slate-800 text-white py-2 px-4 rounded-md shadow hover:bg-teal-600"
             >
               Enquire Now
             </Link>
           </div>
         </div>
+        <WhyUsSection />
         <FoundersMessage />
       </div>
     </section>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Breadcrumb from "../components/Breadcrumb";
 import FoundersMessage from "../components/FoundersMessage";
+import WhyUsSection from "../components/WhyUsSection";
 
 const services = [
   { id: 1, urlend: "accounting", name: "Accounting" },
@@ -13,20 +14,19 @@ const services = [
     urlend: "company-law-matters",
     name: "Company Law Matters Consultancy",
   },
-  { id: 6, urlend: "startup-services", name: "Startup Services" },
-  { id: 7, urlend: "trust-ngo", name: "Societies and Trust (NGO)" },
+  { id: 6, urlend: "trust-ngo", name: "Societies and Trust (NGO)" },
   {
-    id: 8,
+    id: 7,
     urlend: "foreign-collaborations-services",
     name: "Foreign Collaborations Services",
   },
   {
-    id: 9,
+    id: 8,
     urlend: "import-export-consultancy",
     name: "Import Export Consultancy",
   },
-  { id: 10, urlend: "finance", name: "Finance" },
-  { id: 11, urlend: "bpo", name: "Business Process Outsources (BPO)" },
+  { id: 9, urlend: "finance", name: "Finance" },
+  { id: 10, urlend: "other-services", name: "Other Services" },
 ];
 
 const serviceDetails = {
@@ -72,15 +72,8 @@ const serviceDetails = {
       "Advice on corporate governance.",
     ],
   },
+
   6: {
-    title: "Startup Services",
-    description: [
-      "Consultancy for startup businesses.",
-      "Assistance with business planning and strategy.",
-      "Support for fundraising and investment.",
-    ],
-  },
-  7: {
     title: "Societies and Trust (NGO)",
     description: [
       "Consultancy for societies and trusts (NGOs).",
@@ -88,12 +81,21 @@ const serviceDetails = {
       "Support for fundraising and grant applications.",
     ],
   },
-  8: {
+  7: {
     title: "Foreign Collaborations Services",
     description: [
       "Consultancy for foreign collaborations.",
       "Assistance with joint ventures and partnerships.",
       "Advice on regulatory compliance.",
+    ],
+  },
+  8: {
+    title: "Payroll Processing",
+    description: [
+      "Salary compositions/ break up",
+      "Preparation of salary masters",
+      "	Tax withholding from the payroll",
+      "Preparing secure pay slips",
     ],
   },
   9: {
@@ -105,19 +107,18 @@ const serviceDetails = {
     ],
   },
   10: {
-    title: "Finance",
+    title: "Other Services",
     description: [
-      "Consultancy for financial planning and management.",
-      "Assistance with investment strategies.",
-      "Advice on risk management.",
+      "Business consulting services / Business Process Outsourcing (BPOs)",
+      "Startup Services",
+      "Legal & Secretarial Services",
     ],
   },
   11: {
-    title: "Business Process Outsources (BPO)",
+    title: "Other Services",
     description: [
-      "Consultancy for business process outsourcing.",
-      "Assistance with process optimization.",
-      "Support for outsourcing arrangements.",
+      "Business consulting services.",
+       "Startup Services"
     ],
   },
 };
@@ -132,7 +133,7 @@ const Services = () => {
   return (
     <section>
       <Breadcrumb items={[{ name: "Home", link: "/" }, { name: "services" }]} />
-      <div className="flex flex-col md:flex-row w-full justify-center m-auto min-h-[85vh] bg-gray-100 p-4">
+      <div className="flex flex-col md:flex-row w-full justify-center m-auto min-h-[70vh] bg-gray-100 p-4">
         {/* Sidebar */}
         <div className="w-full md:w-1/4 h-fit bg-gray-100 p-5 mb-4 md:mb-0">
           <h2 className="text-2xl font-bold mb-4">Our Services</h2>
@@ -175,6 +176,7 @@ const Services = () => {
           </Link>
         </div>
       </div>
+      <WhyUsSection />
       <FoundersMessage />
     </section>
   );

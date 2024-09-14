@@ -1,6 +1,5 @@
 import React from "react";
-import { Link} from "react-router-dom";
-import user from "../Asset/user.png";
+import user from "../Asset/user.webp";
 export default function OurTeam() {
 
   const teamMembers = [
@@ -37,11 +36,11 @@ export default function OurTeam() {
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className="w-[90%] max-w-3xl mx-auto bg-white rounded-lg overflow-hidden flex"
+              className="w-[70%] h-[100%] max-w-3xl mx-auto bg-white rounded-lg overflow-hidden flex"
             >
               <div className="w-[40%] rounded-md flex justify-center items-center">
                 <img
-                  className="w-[90%] p-2 h-auto object-cover"
+                  className="w-[90%] h-[100%] p-2 object-cover"
                   src={member.image}
                   alt={member.name}
                 />
@@ -55,17 +54,7 @@ export default function OurTeam() {
                 </p>
                 <p className="text-sm text-slate-600 mt-1">{member.mNo}</p>
                 <p className="text-sm text-slate-600 mt-1">{member.position}</p>
-                <p className="text-sm text-slate-600 mt-1">
-                  Mobile: {member.mobile}
-                </p>
-                <p className="text-sm text-slate-600 mt-1">
-                  E-mail: {member.email}
-                </p>
-                <button className="mt-4 py-2 px-3 w-[60%] bg-teal-600 text-white rounded hover:bg-teal-900 transition duration-200">
-                  <Link to="#">
-                  Explore More
-                  </Link>
-                </button>
+              
               </div>
             </div>
           ))}

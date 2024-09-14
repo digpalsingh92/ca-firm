@@ -7,16 +7,17 @@ import ScrollableSection from "../components/ScrollableSection";
 export default function Home() {
   const containerStyles = {
     width: "100%",
-    height: "580px",
+    // height: "580px",
+    aspectRatio: "13/4",
     margin: "0 auto",
   };
 
   const slides = [
-    { url: "images/image-1.jpg", title: "Income-Tax Return" },
-    { url: "images/image-2.jpg", title: "Activa" },
-    { url: "images/image-3.jpg", title: "Accounting" },
-    { url: "images/image-4.jpg", title: "Panda" },
-    { url: "images/image-5.jpg", title: "W3 School" },
+    { url: "images/image-1.webp", title: "Income-Tax Return" },
+    { url: "images/image-2.webp", title: "Activa" },
+    { url: "images/image-3.webp", title: "Accounting" },
+    { url: "images/image-4.webp", title: "Panda" },
+    { url: "images/image-5.webp", title: "W3 School" },
   ];
   return (
     <>

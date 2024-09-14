@@ -1,9 +1,8 @@
 import React from "react";
-import { Link} from "react-router-dom";
-import kalpana from "../Asset/kalpana_chauhan.jpeg";
-import lalit from "../Asset/lalit_tomar.jpeg";
-import mohit from "../Asset/mohit_tripathi.jpeg";
-import Jitendra from "../Asset/jitendra.jpeg";
+import kalpana from "../Asset/kalpana_chauhan.webp";
+import lalit from "../Asset/lalit_tomar.webp";
+import mohit from "../Asset/mohit_tripathi.webp";
+import Jitendra from "../Asset/jitendra.webp";
 export default function OurTeam() {
 
   const teamMembers = [
@@ -11,15 +10,15 @@ export default function OurTeam() {
       name: "CA Kalpana",
       qualifications: "FCA, Certification of Concurrent Audit and Forensic Audit ,DISA, COPERATIVE SOCIATY, PGDBMA, B.Com,",
       position: "Founder",
-      mobile: "8826897211",
-      email: "abc@gmail.com",
+      mobile: "9013870636",
+      email: "@gmail.com",
       image: kalpana, // Replace with actual image path
     },
     {
       name: "CA Lalit",
       qualifications: "FCA, DISA, RERA, B.Com",
       position: "Founding Partner",
-      mobile: "8826897210",
+      mobile: "8076501471",
       email: "abc@gmail.com",
       image: lalit, // Replace with actual image path
     },
@@ -76,11 +75,6 @@ export default function OurTeam() {
                 <p className="text-sm text-slate-600 mt-1">
                   E-mail: {member.email}
                 </p>
-                <button className="mt-4 py-2 px-3 w-[60%] bg-teal-600 text-white rounded hover:bg-teal-800 transition duration-200">
-                  <Link to="#">
-                  Explore More
-                  </Link>
-                </button>
               </div>
             </div>
           ))}

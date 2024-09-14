@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Breadcrumb from "../../components/Breadcrumb";
 import FoundersMessage from "../../components/FoundersMessage";
+import foreignImage from "../../Asset/foreign-collab.webp";
+import WhyUsSection from "../../components/WhyUsSection";
 
 const BulletPoints = {
   items: [
@@ -38,7 +40,13 @@ export default function ForeignCollaboratives() {
             { name: "foreign-collaborations-services" },
           ]}
         />
-        <div className="w-[100%] h-[80%] mt-4 mb-10 flex justify-center items-center ">
+        <div className="w-[100%] h-[80%] mx-auto flex justify-center items-center ">
+        <div className="w-[30%] h-[30%] ml-4 flex flex-col p-4 items-center rounded-md">
+              <img
+                className="w-[90%] h-[90%] rounded-md flex ml-4 items-center justify-center"
+                src={foreignImage}
+              />
+            </div>
           <div className="w-[80%] h-[80%] flex flex-col p-4 items-center rounded-md  ">
             <h1 className="text-3xl font-bold mb-4">
             Foreign Collaborations Services
@@ -67,6 +75,7 @@ export default function ForeignCollaboratives() {
             </Link>
           </div>
         </div>
+        <WhyUsSection />
         <FoundersMessage />
       </div>
     </section>

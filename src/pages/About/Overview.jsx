@@ -1,6 +1,8 @@
 import React from 'react'
 import Breadcrumb from '../../components/Breadcrumb'
-import teamImage from '../../Asset/team.jpg'
+import teamImage from '../../Asset/team.webp'
+import teamImage2 from '../../Asset/team2.webp'
+import teamImage3 from '../../Asset/team3.webp'
 
 export default function Overview() {
   return (
@@ -10,11 +12,11 @@ export default function Overview() {
         <div className="container mx-auto flex flex-col items-center">
           <h1 className="text-4xl font-bold text-slate-800 mb-6">About Us</h1>
           <p className="text-lg text-slate-600 text-center max-w-4xl mb-10">
-            Welcome to Kalpana & Associates, a full-service Chartered Accountancy Firm dedicated to delivering
+            Welcome to Kalpana Chauhan & Associates, a full-service Chartered Accountancy Firm dedicated to delivering
             exceptional financial and advisory services. With years of experience, we serve clients across
             India from our offices located in the Delhi/NCR region.
           </p>
-          <img src={teamImage} alt="Our Team" className="w-full max-w-4xl rounded-lg shadow-md" />
+          <img src={teamImage2} alt="Our Team" className="w-full max-w-4xl rounded-lg shadow-md" />
         </div>
       </section>
 
@@ -43,7 +45,7 @@ export default function Overview() {
       <section className="w-full bg-gray-100 py-10">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
           <div className="flex justify-center">
-            <img src={teamImage} alt="Our Values" className="w-full max-w-sm rounded-lg shadow-md" />
+            <img src={teamImage3} alt="Our Values" className="w-full max-w-sm rounded-lg shadow-md" />
           </div>
           <div className="flex flex-col justify-center">
             <h2 className="text-3xl font-bold text-slate-800 mb-4">Our Values</h2>

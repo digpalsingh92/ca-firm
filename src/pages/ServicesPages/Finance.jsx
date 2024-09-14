@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Breadcrumb from "../../components/Breadcrumb";
 import FoundersMessage from "../../components/FoundersMessage";
+import financeImage from "../../Asset/finance.webp";
+import WhyUsSection from "../../components/WhyUsSection";
 
 const BulletPoints = {
   items: [
@@ -24,7 +26,13 @@ export default function Finance() {
             { name: "finance" },
           ]}
         />
-        <div className="w-[100%] h-[80%] mt-4 mb-10 flex justify-center items-center ">
+        <div className="w-[100%] h-[80%] mx-auto flex justify-center items-center ">
+        <div className="w-[30%] h-[30%] flex flex-col p-4 items-center rounded-md">
+              <img
+                className="w-[90%] h-[90%] rounded-md flex ml-4 items-center justify-center"
+                src={financeImage}
+              />
+            </div>
           <div className="w-[80%] h-[80%] flex flex-col p-4 items-center rounded-md  ">
             <h1 className="text-3xl font-bold mb-4">Finance Services</h1>
             <div className=" w-full flex flex-col justify-center items-center">
@@ -45,12 +53,13 @@ export default function Finance() {
             </div>
             <Link
               to={`/contact`}
-              className="mt-4 inline-block h-[8%] w-[10%] items-center bg-slate-800 text-white py-2 px-4 rounded-md shadow hover:bg-teal-600"
+              className="mt-4 inline-block h-[8%] w-[12%] items-center bg-slate-800 text-white py-2 px-4 rounded-md shadow hover:bg-teal-600"
             >
               Enquire Now
             </Link>
           </div>
         </div>
+        <WhyUsSection />
         <FoundersMessage />
       </div>
     </section>
