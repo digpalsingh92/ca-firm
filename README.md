@@ -1,6 +1,6 @@
-# G.K. Kedia & Co. Static Website
+#Kalpana Chauhan & Associates Static Website
 
-This is a static website for **G.K. Kedia & Co.**, a Chartered Accountant firm, developed using **React** and **Tailwind CSS**. The website includes various sections, including a contact form, job openings, and more, providing a simple yet professional online presence for the firm.
+This is a static website for **Kalpana Chauhan & Associates**, a Chartered Accountant firm, developed using **React** and **Tailwind CSS**. The website includes various sections, including a contact form, job openings, and more, providing a simple yet professional online presence for the firm.
 
 ## Table of Contents
 
@@ -14,7 +14,7 @@ This is a static website for **G.K. Kedia & Co.**, a Chartered Accountant firm, 
 
 ## Project Overview
 
-G.K. Kedia & Co. is a Chartered Accountant firm providing financial, GST, and other related services. The website was created to enhance the firm's online presence and provide a platform for clients to connect, inquire about services, and apply for job openings.
+Kalpana Chauhan & Associates is a Chartered Accountant firm providing financial, GST, and other related services. The website was created to enhance the firm's online presence and provide a platform for clients to connect, inquire about services, and apply for job openings.
 
 This project includes:
 - A **Contact Form** where users can submit their queries or concerns.
