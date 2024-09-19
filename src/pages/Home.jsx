@@ -8,7 +8,7 @@ export default function Home() {
   const containerStyles = {
     width: "100%",
     // height: "580px",
-    aspectRatio: "13/4",
+    aspectRatio: "14/4",
     margin: "0 auto",
   };
 
@@ -23,7 +23,7 @@ export default function Home() {
     <>
       <div className="w-full h-full flex flex-col">
         <section className="w-full h-full flex ">
-          <div style={containerStyles}>
+          <div className="w-full aspect-[12/5]">
             <ImageSlider slides={slides} autoSlideInterval={4000} />
           </div>
         </section>

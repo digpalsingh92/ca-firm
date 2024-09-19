@@ -51,7 +51,7 @@ const ContactPage = () => {
 
   return (
     <section className=" bg-gray-100">
-      <div className="flex flex-col py-4 items-center w-full min-h-[70vh]">
+      <div className="flex flex-col py-4 p-4 mt-4 items-center w-full min-h-[70vh]">
         <div className=" w-[90%] bg-gray-100 ">
           <ul className="flex gap-2">
             {offices.map((office, index) => (
@@ -85,7 +85,7 @@ const ContactPage = () => {
               <FaEnvelope className="text-teal-600 font-medium"/> {selectedOffice.email}
             </p>
           </div>
-          <div className="w-[90%] m-auto">
+          {/* <div className="w-[90%] m-auto">
           <LoadScript googleMapsApiKey="process.env.GOOGLE_MAPS_API_KEY">
             <GoogleMap 
               mapContainerStyle={containerStyle}
@@ -95,7 +95,7 @@ const ContactPage = () => {
               <Marker position={selectedOffice.location} />
             </GoogleMap>
           </LoadScript>
-          </div>
+          </div> */}
         </div>
       </div>
       <ContactForm />

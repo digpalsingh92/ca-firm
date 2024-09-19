@@ -1,31 +1,42 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import gst from "../Asset/gst.webp";
+import IncomeTax from "../Asset/income-tax.webp";
+import CompanyLaw from "../Asset/company-law.webp";
+import Finance from "../Asset/finance.webp";
+import Taxation from "../Asset/income-tax.webp";
+import Payroll from "../Asset/payroll-process.webp";
 
 const services =[
   {
     name : "Goods & Service Tax (GST)",
-    description: "The GST journey in India began in the year 2017, and since then, it has come a long way in shaping our economy. All matters like registration, form filing, application for refund, etc. "
+    description: "The GST journey in India began in the year 2017, and since then, it has come a long way in shaping our economy. All matters like registration, form filing, application for refund, etc. ",
+    img: gst,
   },
   {
     name : "Income Tax Return Filing",
-    description: "Income Tax Return Filing is a process of filing the details of your income and tax paid to the government for a particular financial year. "
+    description: "Income Tax Return Filing is a process of filing the details of your income and tax paid to the government for a particular financial year. ",
+    img: IncomeTax,
   },
   {
     name : "Company Law Matters Consultancy",
-    description: "Company Law Matters Consultancy is a service that helps businesses comply with the Companies Act, 2013, and other related laws. "
+    description: "Company Law Matters Consultancy is a service that helps businesses comply with the Companies Act, 2013, and other related laws. ",
+    img: CompanyLaw,
   },
   {
     name : "Finance Services",
-    description: "Finance Services are services that help businesses manage their finances effectively. "
+    description: "Finance Services are services that help businesses manage their finances effectively. ",
+    img: Finance,
   },
   {
     name : "Taxation Services",
-    description: "Taxation Services are services that help businesses comply with tax laws and regulations. "
+    description: "Taxation Services are services that help businesses comply with tax laws and regulations. ",
+    img: Taxation,
   },
   {
     name: "Payroll Services",
-    description: "Payroll Services are services that help businesses manage their payroll effectively. "
+    description: "Payroll Services are services that help businesses manage their payroll effectively. ",
+    img: Payroll,
   }
 ]
 
@@ -48,6 +59,9 @@ export default function OurServices() {
                 >
                   <div className="w-full flex gap-3 flex-col items-center">
                     <div className="w-full h-full flex flex-col gap-3 justify-center items-center mt-3">
+                      <img
+                        src={service.img}
+                        className="w-[120px] h-[120px] rounded-full"/>
                       <span className="text-xl font-bold text-slate-800 group-hover:text-white text-center">
                         {service.name}
                       </span>

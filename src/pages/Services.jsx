@@ -114,13 +114,6 @@ const serviceDetails = {
       "Legal & Secretarial Services",
     ],
   },
-  11: {
-    title: "Other Services",
-    description: [
-      "Business consulting services.",
-       "Startup Services"
-    ],
-  },
 };
 
 const Services = () => {

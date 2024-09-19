@@ -34,14 +34,14 @@ const navItems = [
       { name: 'Other Services', url: "other-services" },
     ],
   },
-  {
-    name: "Resources",
-    submenu: [
-      { name: "Blogs", url: "blogs" },
-      { name: "Important Links", url: "important-links" },
-      { name: "Latest Updates", url: "latest-updates" },
-    ],
-  },
+  // {
+  //   name: "Resources",
+  //   submenu: [
+  //     { name: "Blogs", url: "blogs" },
+  //     { name: "Important Links", url: "important-links" },
+  //     { name: "Latest Updates", url: "latest-updates" },
+  //   ],
+  // },
   { name: "Contact" },
   { name: "Career" },
 ];

@@ -28,7 +28,7 @@ const pillars = [
 const WhyUsSection = () => {
   return (
     <section className="bg-gray-50 py-16 px-6">
-      <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">Why Us</h2>
+      <h2 className="text-2xl font-bold text-center mb-12 text-gray-800">Why you Should Choose us</h2>
       <motion.div
         className="container mx-auto flex flex-col md:flex-row justify-center gap-8"
         initial={{ opacity: 0 }}

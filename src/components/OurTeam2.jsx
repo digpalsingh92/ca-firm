@@ -9,8 +9,8 @@ export default function OurTeam() {
       image: user, // Replace with actual image path
     },
     {
-      name: "Adv. Sarvam Ritam Khare ",
-      qualifications: "L.L.M, L.L.B, B.Com (Practising in Supreme Court)",
+      name: "Mr. Himanshu Chaudhary ",
+      qualifications: "Ca Finalist, Bcom",
       image: user, // Replace with actual image path
     },
     {
@@ -19,8 +19,8 @@ export default function OurTeam() {
       image: user, // Replace with actual image path
     },
     {
-      name: "CA Jitendra Singh Chauhan",
-      qualifications: "CA Final/ B.com",
+      name: "Dr. Lokesh Raghav",
+      qualifications: "Phd. Finance",
       image: user, // Replace with actual image path
     },
     // Add more team members here

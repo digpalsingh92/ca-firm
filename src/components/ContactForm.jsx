@@ -25,10 +25,10 @@ const ContactForm = () => {
     // EmailJS Configuration
     emailjs
       .send(
-        'service_uim3edt',  // EmailJS Service ID
-        'template_klpja9l',  // EmailJS Template ID
+        'service_755nsx7',  // EmailJS Service ID
+        'template_oo4tjh7',  // EmailJS Template ID
         formData,            // The data you want to send
-        'Js-c-ETvtsyhOXCV6'       // Your User ID from EmailJS
+        'rLR12rtXFfkl3KoTM'       // Your User ID from EmailJS
       )
       .then(
         (result) => {
