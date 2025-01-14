@@ -16,7 +16,7 @@ const ScrollableSection = ({ title, children }) => {
 
 const Dashboard = () => {
   return (
-    <div className="min-h-[60vh] bg-slate-100 flex items-start justify-center mt-6 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-[50vh] bg-slate-100 flex items-start justify-center mt-6 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl w-full h-[90%] grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Latest News Section */}
         <ScrollableSection title="Latest News">

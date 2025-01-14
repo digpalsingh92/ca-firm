@@ -23,27 +23,7 @@ const jobListings = [
     ],
     applyLink: 'https://forms.gle/AwF7XQPe8tyXrorv8', // Replace with actual Google Form link
   },
-  {
-    id: 2,
-    title: 'Chartered Accountant',
-    location: 'Greater Noida, India',
-    type: 'Full-time',
-    description: 'We are seeking a Chartered Accountant to join our team. The ideal candidate will have experience in accounting and financial management.',
-    jobSummary: "The Chartered Accountant will provide expert financial advice, manage tax filings, and ensure compliance with statutory regulations.",
-    keyResponsibilities: [
-      "Prepare and analyze financial statements.",
-      "Ensure compliance with all tax regulations.",
-      "Advise clients on accounting and tax strategies.",
-      "Conduct financial audits."
-    ],
-    qualifications: [
-      "CA qualification is a must.",
-      "3+ years of experience in financial auditing and accounting.",
-      "Strong understanding of financial regulations.",
-      "Proficiency in accounting software and Microsoft Office Suite."
-    ],
-    applyLink: 'https://forms.gle/exampleGoogleFormLink2', // Replace with actual Google Form link
-  },
+  
 ];
 
 const Career = () => {
