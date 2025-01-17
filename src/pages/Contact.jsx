@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 import ContactForm from "../components/ContactForm";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { FaPhoneAlt } from "react-icons/fa";
-import { FaEnvelope } from "react-icons/fa";
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { Helmet } from "react-helmet";
 
 const offices = [

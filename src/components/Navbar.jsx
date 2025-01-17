@@ -42,10 +42,10 @@ export default function Navbar() {
       className={`fixed top-0 w-full h-[70px] z-50 transition-all duration-300 bg-slate-300 shadow-md `}
     >
       <div className="w-full mx-auto flex justify-between items-center px-5">
-        <div className="logo flex-grow-0">
+        <div className="flex-grow-0">
           <img
             src={Logo}
-            alt="Logo"
+            alt="Kalpana Chauhan & Associates"
             className="w-[120px] mt-3 items-center justify-center"
           />
         </div>

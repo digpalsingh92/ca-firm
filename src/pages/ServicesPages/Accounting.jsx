@@ -50,7 +50,7 @@ export default function Auditing() {
             <img
               className="w-full max-w-sm sm:max-w-md h-full rounded-md object-contain"
               src={service.image}
-              alt={`${service.name} image`}
+              alt={service.name}
             />
           </div>
 

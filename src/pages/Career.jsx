@@ -47,7 +47,7 @@ export default function Career() {
   return (
     <>
       <Helmet>
-        <title>Careers - Join Our Team | Global Financial Solutions</title>
+        <title>Careers - Join Our Team | Financial Solutions</title>
         <meta name="description" content="Explore career opportunities and join our team of financial professionals." />
       </Helmet>
 
