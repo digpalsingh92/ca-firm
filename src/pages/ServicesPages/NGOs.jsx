@@ -57,7 +57,7 @@ export default function Auditing() {
               <img
                 className="w-[70%] h-[70%] flex ml-4 items-center justify-center"
                 src={service.image}
-                alt={`${service.name} image`}
+                alt={service.name}
               />
             </div>
 

@@ -59,7 +59,7 @@ export default function PayrollProcessing() {
               <img
                 className="w-[90%] h-[90%] rounded-md flex ml-4 items-center justify-center"
                 src={service.image}
-                alt={`${service.name} image`}
+                alt={service.name}
               />
             </div>
 

@@ -1,13 +1,11 @@
 import React from 'react';
-import { FaFacebookSquare } from "react-icons/fa";
+import { FaFacebookSquare, FaYoutube, FaLinkedin } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
-import { FaLinkedin } from "react-icons/fa";
-import { FaYoutube } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-800 mt-6 p-5 rounded-lg text-white">
+    <footer className="bg-gray-800 mt-6 p-5 rounded-t-md text-white">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
           <h2 className="text-lg font-bold mb-4 text-teal-500">Kalpana Chauhan & Associates</h2>

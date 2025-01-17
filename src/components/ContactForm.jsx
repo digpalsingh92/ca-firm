@@ -1,6 +1,21 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
 
+
+const Options = [
+  { name: 'Select Service', value: "" },
+  { name: 'Accounting', value: "Accounting" },
+  { name: 'Auditing & Assurance', value: "Auditing & assurance" },
+  { name: 'Income Tax', value: "Income Tax" },
+  { name: 'Goods & Services Tax (GST)', value: "Gst" },
+  { name: 'Company Law Matters Consultancy', value: "Company Law / matters" },
+  { name: 'Societies and Trust (NGO)', value: "Trust Ngo" },
+  { name: 'Foreign Collaborations Services', value: "Foreign Collaborations Services" },
+  { name: 'Import - Export Consultancy', value: "Import Export Consultancy" },
+  { name: 'Finance', value: "Finance" },
+  { name: 'Payroll Processing', value: "Payroll" },
+  { name: 'Other Services', value: "Other Services" },
+]
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -96,10 +111,11 @@ const ContactForm = () => {
               className="p-2 rounded border border-gray-300"
               required
             >
-              <option value="">Select Services</option>
-              <option value="Accounting">Accounting</option>
-              <option value="Auditing">Auditing</option>
-              <option value="Consultancy">Consultancy</option>
+            {
+              Options.map((option, index) => (
+                <option key={index} value={option.value}>{option.name}</option>
+              ))
+            }
             </select>
             <input
               type="text"

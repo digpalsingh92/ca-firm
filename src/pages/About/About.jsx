@@ -1,116 +1,161 @@
-import React from "react";
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import { Award, Users, Target, Shield, BookOpen, Globe } from 'lucide-react';
 import kalpana from "../../Asset/kalpana_chauhan.webp";
 import lalit from "../../Asset/lalit_tomar.webp";
 import Breadcrumb from "../../components/Breadcrumb";
 
+const stats = [
+  { label: 'Years of Experience', value: '14+' },
+  { label: 'Satisfied Clients', value: '1000+' },
+  { label: 'Professional Team', value: '20+' },
+  { label: 'Cities Served', value: '4' },
+];
+
+const values = [
+  {
+    icon: Target,
+    title: 'Strategic Excellence',
+    description: 'Specialized and innovative professional services with speed, accuracy, and reliability.'
+  },
+  {
+    icon: Shield,
+    title: 'Commitment to Quality',
+    description: 'Highest standards of professional service delivery and client satisfaction.'
+  },
+  {
+    icon: Users,
+    title: 'Client-Centric Approach',
+    description: 'Proactive solutions tailored to meet unique client requirements.'
+  },
+  {
+    icon: Globe,
+    title: 'Wide Reach',
+    description: 'Serving clients across Delhi NCR, Greater Noida, and Mumbai.'
+  }
+];
+
 const About = () => {
   return (
-    <div className="min-h-screen w-full h-full bg-slate-100 flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8">
-      <Breadcrumb items={[{ name: "Home", link: "/" }, { name: "About" }]} />
-      <div className=" space-y-8 w-[85%] p-10 bg-slate-100 rounded-lg">
-        <div className="text-center">
-          <h2 className="text-4xl font-extrabold text-gray-900">About Us</h2>
-          <p className="mt-4  text-lg text-gray-600">
-            Kalpana Chauhan & Associates is a Chartered Accountancy Firm,
-          established in <strong> August 2010</strong>, having its <strong> Firm Registration No.(FRN)
-            015585C, Pan No AALFK6521F</strong>. The firm is headed by CA Lalit Tomar and
-            CA Kalpana Chauhan, who are Fellow members of the Institute of
-            Chartered Accountants of India. The said concern is a partnership
-            based out of Delhi NCR, with branch offices in Delhi, Greater Noida,
-            and Mumbai.
-          </p>
-        </div>
-        <div className="flex justify-center space-x-8 mt-8">
-          <div className="text-center">
-            <img
-              className="w-40 h-40 rounded-full mx-auto"
-              src={lalit}
-              alt="CA Lalit Tomar"
-            />
-            <h3 className="mt-4 text-xl font-semibold text-gray-800">
-              CA Lalit Tomar
-            </h3>
-            <p className="text-gray-600">Founder & Partner</p>
-          </div>
-          <div className="text-center">
-            <img
-              className="w-40 h-40 rounded-full mx-auto"
-              src={kalpana}
-              alt="CA Kalpana Chauhan"
-            />
-            <h3 className="mt-4 text-xl font-semibold text-gray-800">
-              CA Kalpana Chauhan
-            </h3>
-            <p className="text-gray-600">Founder & Partner</p>
+    <>
+      <Helmet>
+        <title>About Us - Kalpana Chauhan & Associates</title>
+        <meta name="description" content="Learn about Kalpana Chauhan & Associates, a leading Chartered Accountancy Firm established in 2010." />
+      </Helmet>
+
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+        <Breadcrumb items={[{ name: "Home", link: "/" }, { name: "About" }]} />
+        
+        {/* Hero Section */}
+        <div className="relative isolate mt-[70px] px-6 pt-14 lg:px-8">
+          <div className="mx-auto max-w-4xl py-12 sm:py-16">
+            <div className="text-center">
+              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                About Us
+              </h1>
+              <p className="mt-6 text-lg leading-8 text-gray-600">
+                Kalpana Chauhan & Associates is a Chartered Accountancy Firm, established in <span className="font-semibold">August 2010</span>, with Firm Registration No. (FRN) <span className="font-semibold">015585C</span> and PAN No <span className="font-semibold">AALFK6521F</span>.
+              </p>
+            </div>
           </div>
         </div>
-        <div>
-          <h3 className="text-2xl font-bold text-gray-800 mt-12">
-            Our Strategic Policy
-          </h3>
-          <p className="mt-4 text-gray-600">
-            Our strategic policy is concentric operations and accordingly, we
-            render specialized and innovative professional services with speed,
-            accuracy, and reliability. It is speed that derives from sizeable
-            infrastructural support and an extensive base of associates,
-            accuracy that results from an understanding of the science, and
-            reliability that only commitment can bestow.
-          </p>
-          <p className="mt-4 text-gray-600">
-            Today, our world is being brought together not simply by the mandate
-            of nations, but by the power of individuals who allow themselves to
-            hope for a better life. Nothing holds greater possibility than a
-            world with hope for its own future. Although the road may not be
-            easy or quick, we think we can help our clients achieve even greater
-            success.
-          </p>
+
+        {/* Stats Section */}
+        <div className="bg-white py-12">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-4">
+              {stats.map((stat) => (
+                <div key={stat.label} className="mx-auto flex max-w-xs flex-col gap-y-4">
+                  <dt className="text-base leading-7 text-gray-600">{stat.label}</dt>
+                  <dd className="order-first text-3xl font-semibold tracking-tight text-teal-600 sm:text-5xl">
+                    {stat.value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
         </div>
-        <div>
-          <h3 className="text-2xl font-bold text-gray-800 mt-8">Our Mission</h3>
-          <p className="mt-4 text-gray-600">
-            Our mission is to serve our clients with creativity, brought about
-            by out-of-the-box thinking, enthusiasm, stemming from the blend of
-            young, experienced, and dynamic team members, diligence assured by
-            cumulative years of the firm's experience, and vision captured by
-            pre-empting client needs. This principle is at the heart of our
-            work.
-          </p>
+
+        {/* Leadership Section */}
+        <div className="bg-white py-24 sm:py-32">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl lg:text-center">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                Our Leadership
+              </h2>
+              <p className="mt-4 text-lg leading-8 text-gray-600">
+                Led by experienced professionals who are Fellow members of the Institute of Chartered Accountants of India.
+              </p>
+            </div>
+            <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:gap-x-16">
+              {[
+                { image: lalit, name: "CA Lalit Tomar", role: "Founder & Partner" },
+                { image: kalpana, name: "CA Kalpana Chauhan", role: "Founder & Partner" }
+              ].map((leader) => (
+                <div key={leader.name} className="flex flex-col items-center">
+                  <img
+                    className="w-48 h-48 rounded-full object-cover mb-6 shadow-lg"
+                    src={leader.image}
+                    alt={leader.name}
+                  />
+                  <h3 className="text-2xl font-semibold text-gray-900">{leader.name}</h3>
+                  <p className="text-lg text-gray-600">{leader.role}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-        <div>
-          <h3 className="text-2xl font-bold text-gray-800 mt-8">
-            Our Services
-          </h3>
-          <p className="mt-4 text-gray-600">
-            We are pleased to introduce our firm, rendering services in the
-            areas of Taxation Laws, Corporate Laws, Registration of Companies,
-            Partnership Firms, Societies, Trusts, NGOs, Legal Consultancy,
-            Labour Laws, Intellectual Property Rights, Foreign Direct Investment
-            in India, Statutory Compliance Audit, and Legal advisory. It is the
-            philosophy of our firm to be proactive to our clients’ requirements.
-          </p>
-          <p className="mt-4 text-gray-600">
-            The firm works with a progressive and proactive mindset and serves
-            its clients with quality and results. It has the potential to handle
-            challenging and wide-ranging assignments. We strive to provide the
-            best corporate services in tune with the rapidly changing regulatory
-            and corporate environment and encourage our clients to follow the
-            best Corporate Compliances and Governance practices.
-          </p>
+
+        {/* Values Section */}
+        <div className="bg-slate-50 py-24 sm:py-32">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl lg:text-center">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                Our Values
+              </h2>
+              <p className="mt-4 text-lg leading-8 text-gray-600">
+                Built on the foundation of excellence, integrity, and client success.
+              </p>
+            </div>
+            <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:max-w-none lg:grid-cols-4">
+              {values.map((value) => (
+                <div key={value.title} className="flex flex-col items-center text-center">
+                  <div className="rounded-lg bg-teal-100 p-4 mb-6">
+                    <value.icon className="h-6 w-6 text-teal-600" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900">{value.title}</h3>
+                  <p className="mt-4 text-sm leading-6 text-gray-600">{value.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-        <div>
-          <h3 className="text-2xl font-bold text-gray-800 mt-8">
-            Our Standards
-          </h3>
-          <p className="mt-4 text-gray-600">
-            To this end, we have set ourselves service standards that include
-            identifying the needs of the client and developing a plan to meet
-            those needs. We firmly believe in rendering Professional Services of
-            the highest order.
-          </p>
+
+        {/* Mission & Services Section */}
+        <div className="bg-white py-24 sm:py-32">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+              <div>
+                <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-6">
+                  Our Mission
+                </h2>
+                <p className="text-lg leading-8 text-gray-600">
+                  Our mission is to serve our clients with creativity, brought about by out-of-the-box thinking, enthusiasm, stemming from the blend of young, experienced, and dynamic team members, diligence assured by cumulative years of the firm's experience, and vision captured by pre-empting client needs.
+                </p>
+              </div>
+              <div>
+                <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-6">
+                  Our Services
+                </h2>
+                <p className="text-lg leading-8 text-gray-600">
+                  We provide comprehensive services in Taxation Laws, Corporate Laws, Registration of Companies, Partnership Firms, Societies, Trusts, NGOs, Legal Consultancy, Labour Laws, Intellectual Property Rights, Foreign Direct Investment in India, Statutory Compliance Audit, and Legal advisory.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
-};
-
+}
 export default About;

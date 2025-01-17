@@ -55,7 +55,7 @@ export default function OurTeam() {
             >
               <div className="w-[40%] rounded-md flex justify-center items-center">
                 <img
-                  className="w-[80%] p-2 h-[90%] items-center justify-center object-cover"
+                  className="w-[80%] p-2 h-[90%] rounded-[4rem] items-center justify-center object-cover"
                   src={member.image}
                   alt={member.name}
                 />

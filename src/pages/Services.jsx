@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Breadcrumb from "../components/Breadcrumb";
 import FoundersMessage from "../components/FoundersMessage";
 import WhyUsSection from "../components/WhyUsSection";
+import { Helmet } from "react-helmet";
 
 const services = [
   { id: 1, urlend: "accounting", name: "Accounting" },
@@ -124,9 +125,14 @@ const Services = () => {
   };
 
   return (
+      <>
+    <Helmet>
+            <title>Our Services - KCA TaxCare</title>
+            <meta name="description" content="Explore our comprehensive range of accounting and financial services." />
+          </Helmet>
     <section>
       <Breadcrumb items={[{ name: "Home", link: "/" }, { name: "services" }]} />
-      <div className="flex flex-col md:flex-row w-full justify-center m-auto min-h-[70vh] bg-gray-100 p-4">
+      <div className="flex flex-col md:flex-row w-full mt-[70px] justify-center m-auto min-h-[70vh] p-4">
         {/* Sidebar */}
         <div className="w-full md:w-1/4 h-fit bg-gray-100 p-5 mb-4 md:mb-0">
           <h2 className="text-2xl font-bold mb-4">Our Services</h2>
@@ -172,6 +178,7 @@ const Services = () => {
       <WhyUsSection />
       <FoundersMessage />
     </section>
+    </>
   );
 };
 

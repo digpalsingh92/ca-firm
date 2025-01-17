@@ -32,6 +32,7 @@ export default function CompanyLaw() {
               <img
                 className="w-[90%] h-[90%] rounded-md flex ml-4 items-center justify-center"
                 src={CompanyImage}
+                alt="Company Law Matters image"
               />
             </div>
           <div className="w-[80%] h-[80%] flex flex-col p-4 items-center rounded-md  ">

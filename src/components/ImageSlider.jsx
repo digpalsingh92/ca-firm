@@ -1,82 +1,106 @@
-import React, { useEffect, useState, useCallback, useMemo } from "react";
-import { useSwipeable } from "react-swipeable";
+import React, { useState, useEffect } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-const ImageSlider = ({
-  slides,
-  autoSlide = true,
-  autoSlideInterval = 5000,
-}) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+// interface Slide {
+//   image: string;
+//   title: string;
+//   description: string;
+// }
 
-  const goToPrevious = useCallback(() => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? slides.length - 1 : prevIndex - 1
-    );
-  }, [slides.length]);
+const slides = [
+  {
+    image: "images/image-1.webp",
+    title: "Expert Financial Guidance",
+    description: "Professional accounting and advisory services for your business success"
+  },
+  {
+    image: "images/image-2.webp",
+    title: "Tax Planning Excellence",
+    description: "Strategic tax solutions to optimize your financial position"
+  },
+  {
+    image: "images/image-3.webp",
+    title: "Business Advisory",
+    description: "Comprehensive consulting services for sustainable growth"
+  },
+  {
+    image: "images/image-4.webp",
+    title: "Business Advisory",
+    description: "Comprehensive consulting services for sustainable growth"
+  },
+  {
+    image: "images/image-5.webp",
+    title: "Business Advisory",
+    description: "Comprehensive consulting services for sustainable growth"
+  },
+];
 
-  const goToNext = useCallback(() => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === slides.length - 1 ? 0 : prevIndex + 1
-    );
-  }, [slides.length]);
+export function ImageSlider() {
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-  const goToSlide = useCallback((slideIndex) => {
-    setCurrentIndex(slideIndex);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(timer);
   }, []);
 
-  // Auto slide
-  useEffect(() => {
-    if (!autoSlide) return;
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
 
-    const interval = setInterval(goToNext, autoSlideInterval);
-    return () => clearInterval(interval);
-  }, [goToNext, autoSlide, autoSlideInterval]);
-
-  // Swipeable handlers
-  const handlers = useSwipeable({
-    onSwipedLeft: goToNext,
-    onSwipedRight: goToPrevious,
-    preventScrollOnSwipe: true,
-    trackMouse: true,
-  });
-
-  const currentSlide = useMemo(() => slides[currentIndex], [currentIndex, slides]);
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
 
   return (
-    <div {...handlers} className="relative mt-5 w-full h-full overflow-hidden">
-      <div
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white z-10 cursor-pointer bg-gray-700 p-2 rounded-full"
-        onClick={goToPrevious}
-      >
-        ❰
-      </div>
-      <div
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white z-10 cursor-pointer bg-gray-700 p-2 rounded-full"
-        onClick={goToNext}
-      >
-        ❱
-      </div>
-      <div
-        className="w-full h-[60vh] md:h-[80vh] lg:h-[90vh] bg-cover bg-center transition-all duration-500"
-        style={{
-          backgroundImage: `url(${currentSlide.url})`,
-        }}
-      ></div>
-      <div className="absolute w-full flex justify-center bottom-3 z-10 sm:bottom-6">
-        {slides.map((_, slideIndex) => (
-          <div
-            key={slideIndex}
-            className={`mx-1 cursor-pointer text-2xl ${
-              currentIndex === slideIndex ? "text-teal-500" : "text-slate-300"
-            }`}
-            onClick={() => goToSlide(slideIndex)}
-          >
-            ●
+    <div className="relative top-[4rem] h-[600px] w-full overflow-hidden">
+      {slides.map((slide, index) => (
+        <div
+          key={index}
+          className={`absolute inset-0 transition-opacity duration-1000 ${
+            index === currentSlide ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
+          <div className="absolute inset-0 bg-black/50 z-10" />
+          <img
+            src={slide.image}
+            alt={slide.title}
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 z-20 left-5 flex items-center justify-center text-center text-white">
+            <div className="max-w-3xl px-4">
+              <h2 className="text-4xl sm:text-5xl font-bold mb-4">{slide.title}</h2>
+              <p className="text-xl sm:text-2xl">{slide.description}</p>
+            </div>
           </div>
+        </div>
+      ))}
+      
+      <button
+        onClick={prevSlide}
+        className="absolute left-4 top-1/2 z-30 -translate-y-1/2 bg-white/80 p-2 rounded-full hover:bg-white transition-colors duration-200"
+      >
+        <ChevronLeft className="h-6 w-6 text-gray-800" />
+      </button>
+      <button
+        onClick={nextSlide}
+        className="absolute right-4 top-1/2 z-30 -translate-y-1/2 bg-white/80 p-2 rounded-full hover:bg-white transition-colors duration-200"
+      >
+        <ChevronRight className="h-6 w-6 text-gray-800" />
+      </button>
+
+      <div className="absolute bottom-4 left-1/2 z-30 flex -translate-x-1/2 space-x-2">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`h-2 w-2 rounded-full transition-all duration-200 ${
+              index === currentSlide ? 'bg-white w-4' : 'bg-white/50'
+            }`}
+          />
         ))}
       </div>
     </div>
   );
-};
-
-export default ImageSlider;
+}

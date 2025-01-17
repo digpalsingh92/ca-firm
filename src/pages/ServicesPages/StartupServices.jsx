@@ -28,6 +28,7 @@ export default function StartupServices() {
               <img
                 className="w-[90%] h-[90%] rounded-md relative flex ml-4 items-center justify-center"
                 src={startup}
+                alt="Startup Services image"
               />
             </div>
           <div className="w-[90%] h-[100%] flex flex-col p-4 items-center rounded-md  ">

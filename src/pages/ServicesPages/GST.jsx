@@ -35,6 +35,7 @@ export default function GST() {
               <img
                 className="w-[90%] h-[90%] rounded-md flex ml-4 items-center justify-center"
                 src={gstImage}
+                alt="Goods and Service Taxes image"
               />
             </div>
           <div className="w-[100%] h-[80%] flex flex-col p-4 items-center rounded-md  ">
