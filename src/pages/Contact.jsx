@@ -4,6 +4,7 @@ import ContactForm from "../components/ContactForm";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 
 const offices = [
   {
@@ -50,8 +51,13 @@ const ContactPage = () => {
   const [selectedOffice, setSelectedOffice] = useState(offices[0]);
 
   return (
+    <>
+    <Helmet>
+            <title>Contact - KCA TaxCare</title>
+            <meta name="description" content="Explore our comprehensive range of accounting and financial services." />
+          </Helmet>
     <section className=" bg-gray-100">
-      <div className="flex flex-col py-4 p-4 mt-4 items-center w-full min-h-[70vh]">
+      <div className="flex flex-col py-4 p-4 mt-[70px] items-center w-full min-h-[70vh]">
         <div className=" w-[90%] bg-gray-100 ">
           <ul className="flex gap-2">
             {offices.map((office, index) => (
@@ -100,6 +106,7 @@ const ContactPage = () => {
       </div>
       <ContactForm />
     </section>
+    </>
   );
 };
 

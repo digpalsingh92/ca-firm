@@ -1,20 +1,13 @@
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// import Logo from "../Asset/logo.png";
-import Logo from "../Asset/Logo.webp";
+import Logo from "../Asset/Logo.gif";
+import { ChevronRight, ChevronRightIcon } from "lucide-react";
 
 const navItems = [
   { name: "Home" },
   {
     name: "About",
     submenu: [{ name: "Overview", url: "overview" }],
-  },
-  {
-    name: "Our Team",
-    // submenu: [
-    //   { name: "Founder", url: "founder" },
-    //   { name: "Partners", url: "partners" },
-    //   { name: "Staffs", url: "staffs" },
-    // ],
   },
   {
     name: "Services",
@@ -35,32 +28,20 @@ const navItems = [
       { name: "Other Services", url: "other-services" },
     ],
   },
-  // {
-  //   name: "Resources",
-  //   submenu: [
-  //     { name: "Blogs", url: "blogs" },
-  //     { name: "Important Links", url: "important-links" },
-  //     { name: "Latest Updates", url: "latest-updates" },
-  //   ],
-  // },
-  { name: "Contact" },
+  { name: "Career" },
 ];
 
 export default function Navbar() {
-  // const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  // Handle scroll effect
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     setIsScrolled(window.scrollY > 0);
-  //   };
-  //   window.addEventListener('scroll', handleScroll);
-  //   return () => window.removeEventListener('scroll', handleScroll);
-  // }, []);
-
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
   return (
-    <nav className="bg-slate-200 shadow-lg">
-      <div className=" w-full mx-auto flex justify-between items-center px-5">
+    <nav
+      className={`fixed top-0 w-full h-[70px] z-50 transition-all duration-300 bg-slate-300 shadow-md `}
+    >
+      <div className="w-full mx-auto flex justify-between items-center px-5">
         <div className="logo flex-grow-0">
           <img
             src={Logo}
@@ -68,7 +49,7 @@ export default function Navbar() {
             className="w-[120px] mt-3 items-center justify-center"
           />
         </div>
-        <div className="hidden md:block px-5">
+        <div className="hidden md:flex flex-grow justify-center px-5">
           <ul className="flex gap-4 space-x-6">
             {navItems.map((item, index) => (
               <li key={index} className="relative group">
@@ -107,36 +88,61 @@ export default function Navbar() {
             ))}
           </ul>
         </div>
-        <div>
-          <span className="text-[14px]">CAREER</span>
+        <div className="hidden md:flex items-center mx-auto">
+          <Link
+            to="/contact"
+            className="group flex items-center justify-center text-[14px] font-medium border-2 border-teal-600 rounded-2xl w-[10rem] p-2 bg-slate-300 text-gray-900 hover:bg-teal-600 hover:text-white transition-all duration-300"
+          >
+            CONTACT
+            <span className="ml-2 text-teal-600 group-hover:text-white group-hover:translate-x-1 transition-transform duration-300">
+              <ChevronRightIcon size={16} />
+            </span>
+          </Link>
         </div>
-        {/* <div className="md:hidden">
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  <Menu className="h-6 w-6" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent>
-                <div className="flex flex-col space-y-4 mt-8">
-                  {navigation.map((item) => (
-                    <Link
-                      key={item.name}
-                      to={item.href}
-                      className="text-lg font-medium hover:text-primary transition-colors"
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
-                  <Button variant="destructive" className="mt-4">
-                    <Phone className="mr-2 h-4 w-4" />
-                    Emergency Call
-                  </Button>
-                </div>
-              </SheetContent>
-            </Sheet>
-          </div> */}
+        {/* mobile navigation */}
+        <div className="md:hidden">
+          <button
+            onClick={toggleMenu}
+            className="text-gray-900 focus:outline-none"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"}
+              ></path>
+            </svg>
+          </button>
+        </div>
       </div>
+      {isOpen && (
+        <div className="md:hidden bg-slate-300 shadow-md">
+          <ul className="flex flex-col items-center space-y-4 py-4">
+            {navItems.map((item, index) => (
+              <li key={index}>
+                <Link
+                  to={
+                    item.name === "Home"
+                      ? "/"
+                      : `/${item.name.toLowerCase().replace(/ /g, "-")}`
+                  }
+                  className="text-gray-900 text-[14px] font-medium hover:text-teal-600"
+                  onClick={toggleMenu}
+                >
+                  {item.name.toUpperCase()}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </nav>
   );
 }

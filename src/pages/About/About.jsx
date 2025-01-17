@@ -6,10 +6,10 @@ import lalit from "../../Asset/lalit_tomar.webp";
 import Breadcrumb from "../../components/Breadcrumb";
 
 const stats = [
-  { label: 'Years of Experience', value: '13+' },
+  { label: 'Years of Experience', value: '14+' },
   { label: 'Satisfied Clients', value: '1000+' },
   { label: 'Professional Team', value: '20+' },
-  { label: 'Cities Served', value: '3' },
+  { label: 'Cities Served', value: '4' },
 ];
 
 const values = [
@@ -47,7 +47,7 @@ const About = () => {
         <Breadcrumb items={[{ name: "Home", link: "/" }, { name: "About" }]} />
         
         {/* Hero Section */}
-        <div className="relative isolate px-6 pt-14 lg:px-8">
+        <div className="relative isolate mt-[70px] px-6 pt-14 lg:px-8">
           <div className="mx-auto max-w-4xl py-12 sm:py-16">
             <div className="text-center">
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">

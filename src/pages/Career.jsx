@@ -1,101 +1,241 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import { useForm } from 'react-hook-form';
+import { Briefcase, GraduationCap, Heart, Coffee } from 'lucide-react';
 
-const jobListings = [
+const openings = [
   {
-    id: 1,
-    title: 'Accounts Assistant',
-    location: 'Noida, India',
+    title: 'Account Analyst',
     type: 'Full-time',
-    description: "We are a reputable Chartered Accountancy firm providing comprehensive financial services, including accounting, taxation, and business advisory.",
-    jobSummary: "We are seeking a detail-oriented and organized Accounts Assistant to support our accounting team. The ideal candidate will assist with daily financial tasks, maintain accurate records, and help ensure smooth operations within the finance department.",
-    keyResponsibilities: [
-      "Assist in maintaining accurate financial records, including daily bookkeeping, ledgers, and account reconciliations.",
-      "Process invoices, payments, and expense reports efficiently and accurately.",
-      "Support in the preparation of financial statements and management reports.",
-      "Assist with tax compliance, including GST, TDS, and income tax filings."
-    ],
-    qualifications: [
-      "Bachelor's degree in Accounting, Finance, or a related field.",
-      "Proven experience as an Accounts Assistant or in a similar role.",
-      "Strong understanding of accounting principles and financial reporting.",
-      "Proficiency in accounting software (e.g., Tally, QuickBooks) and Microsoft Office Suite (Excel, Word).",
-      "Excellent organizational skills and attention to detail."
-    ],
-    applyLink: 'https://forms.gle/AwF7XQPe8tyXrorv8', // Replace with actual Google Form link
+    location: 'Noida, Delhi',
+    experience: 'Fresher',
+    description: 'Looking for an experienced tax professional to handle complex tax planning and compliance.',
   },
-  
 ];
 
-const Career = () => {
-  const [selectedJob, setSelectedJob] = useState(null);
+const benefits = [
+  {
+    icon: Heart,
+    title: 'Health & Wellness',
+    description: 'Comprehensive health insurance, dental, and vision coverage',
+  },
+  {
+    icon: GraduationCap,
+    title: 'Professional Development',
+    description: 'Continuous learning opportunities and certification support',
+  },
+  {
+    icon: Coffee,
+    title: 'Work-Life Balance',
+    description: 'Flexible working hours and remote work options',
+  },
+  {
+    icon: Briefcase,
+    title: 'Career Growth',
+    description: 'Clear career progression and mentorship programs',
+  },
+];
 
-  const handleJobClick = (job) => {
-    if (selectedJob === job) {
-      setSelectedJob(null); // Close if already open
-    } else {
-      setSelectedJob(job); // Open selected job
-    }
+export default function Career() {
+  const { register, handleSubmit, formState: { errors } } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+    // Handle form submission
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-12">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900">Careers</h1>
-          <p className="text-lg text-gray-600 mt-4">Join our team and help us build the future!</p>
+    <>
+      <Helmet>
+        <title>Careers - Join Our Team | Global Financial Solutions</title>
+        <meta name="description" content="Explore career opportunities and join our team of financial professionals." />
+      </Helmet>
+
+      {/* Hero Section */}
+      <div className="relative bg-teal-800">
+        <div className="absolute inset-0">
+          <img
+            className="h-full w-full object-cover opacity-30"
+            src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+            alt="Team collaboration"
+          />
         </div>
-        <div className="space-y-8">
-          {jobListings.map((job) => (
-            <div key={job.id} className="bg-white p-6 rounded-lg shadow-md">
-              <h2 className="text-2xl font-bold text-gray-800">{job.title}</h2>
-              <p className="text-gray-600">{job.location} | {job.type}</p>
-              <p className="mt-4 text-gray-700">{job.description}</p>
-              <div className="mt-6 flex space-x-4">
-                {/* View Details Button */}
-                <button
-                  onClick={() => handleJobClick(job)}
-                  className="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-800"
-                >
-                  {selectedJob === job ? "Hide Details" : "View Details"}
-                </button>
-                {/* Apply Now Button */}
-                <a
-                  href={job.applyLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-800"
-                >
-                  Apply Now
-                </a>
-              </div>
-
-              {/* Job Details Section */}
-              {selectedJob === job && (
-                <div className="mt-4">
-                  <h3 className="text-xl font-semibold text-gray-800">Job Description</h3>
-                  <p className="mt-2 text-gray-700">{job.jobSummary}</p>
-
-                  <h4 className="mt-4 text-lg font-semibold text-gray-800">Key Responsibilities</h4>
-                  <ul className="list-disc list-inside mt-2 text-gray-700">
-                    {job.keyResponsibilities.map((responsibility, index) => (
-                      <li key={index}>{responsibility}</li>
-                    ))}
-                  </ul>
-
-                  <h4 className="mt-4 text-lg font-semibold text-gray-800">Qualifications</h4>
-                  <ul className="list-disc list-inside mt-2 text-gray-700">
-                    {job.qualifications.map((qualification, index) => (
-                      <li key={index}>{qualification}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-          ))}
+        <div className="relative px-6 py-24 sm:px-8 sm:py-32 lg:py-40">
+          <div className="mx-auto max-w-2xl text-center">
+            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+              Join Our Team
+            </h1>
+            <p className="mt-6 text-lg leading-8 text-teal-100">
+              Build your career with a leading financial services firm. We're always looking for talented professionals to join our team.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  );
-};
 
-export default Career;
+      {/* Current Openings */}
+      <div className="bg-white py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              Current Openings
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-gray-600">
+              Explore our current job opportunities and find your perfect role.
+            </p>
+          </div>
+          <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-12 lg:max-w-none lg:grid-cols-2">
+            {openings.map((job) => (
+              <div
+                key={job.title}
+                className="flex flex-col bg-white rounded-2xl shadow-sm ring-1 ring-gray-200/70 p-8 transition-all duration-300 hover:shadow-lg"
+              >
+                <h3 className="text-xl font-semibold text-gray-900">{job.title}</h3>
+                <div className="mt-2 flex items-center gap-x-4 text-sm text-gray-500">
+                  <span>{job.type}</span>
+                  <span>•</span>
+                  <span>{job.location}</span>
+                  <span>•</span>
+                  <span>{job.experience}</span>
+                </div>
+                <p className="mt-4 text-gray-600">{job.description}</p>
+                <button
+                  onClick={() => document.getElementById('application-form')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="mt-6 self-start rounded-full bg-teal-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-teal-500 transition-colors duration-200"
+                >
+                  Apply Now
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Benefits Section */}
+      <div className="bg-gray-50 py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              Why Join Us?
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-gray-600">
+              We offer competitive benefits and a supportive work environment.
+            </p>
+          </div>
+          <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:max-w-none lg:grid-cols-4">
+            {benefits.map((benefit) => (
+              <div key={benefit.title} className="text-center">
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-teal-100">
+                  <benefit.icon className="h-8 w-8 text-teal-600" />
+                </div>
+                <h3 className="mt-6 text-lg font-semibold text-gray-900">{benefit.title}</h3>
+                <p className="mt-2 text-gray-600">{benefit.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Application Form */}
+      {/* <div id="application-form" className="bg-white py-24 sm:py-32">
+        <div className="mx-auto max-w-2xl px-6 lg:px-8">
+          <div className="mx-auto max-w-xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              Apply Now
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-gray-600">
+              Take the first step towards joining our team.
+            </p>
+          </div>
+          <form onSubmit={handleSubmit(onSubmit)} className="mt-16 space-y-8">
+            <div>
+              <label htmlFor="name" className="block text-sm font-semibold leading-6 text-gray-900">
+                Full Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                {...register('name', { required: 'Name is required' })}
+                className="mt-2 block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-teal-600 sm:text-sm sm:leading-6"
+              />
+              {errors.name && <p className="mt-2 text-sm text-red-600">{errors.name.message}</p>}
+            </div>
+
+            <div>
+              <label htmlFor="email" className="block text-sm font-semibold leading-6 text-gray-900">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                {...register('email', {
+                  required: 'Email is required',
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                    message: 'Invalid email address',
+                  },
+                })}
+                className="mt-2 block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-teal-600 placeholder:text-gray-400 focus:ring-teal-600 sm:text-sm sm:leading-6"
+              />
+              {errors.email && <p className="mt-2 text-sm text-red-600">{errors.email.message}</p>}
+            </div>
+
+            <div>
+              <label htmlFor="position" className="block text-sm font-semibold leading-6 text-gray-900">
+                Position Applied For
+              </label>
+              <select
+                id="position"
+                {...register('position', { required: 'Position is required' })}
+                className="mt-2 block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6"
+              >
+                <option value="">Select a position</option>
+                {openings.map((job) => (
+                  <option key={job.title} value={job.title}>
+                    {job.title}
+                  </option>
+                ))}
+              </select>
+              {errors.position && <p className="mt-2 text-sm text-red-600">{errors.position.message}</p>}
+            </div>
+
+            <div>
+              <label htmlFor="resume" className="block text-sm font-semibold leading-6 text-gray-900">
+                Resume/CV
+              </label>
+              <input
+                type="file"
+                id="resume"
+                accept=".pdf,.doc,.docx"
+                {...register('resume', { required: 'Resume is required' })}
+                className="mt-2 block w-full text-sm text-gray-900 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-teal-50 file:text-teal-600 hover:file:bg-teal-100"
+              />
+              {errors.resume && <p className="mt-2 text-sm text-red-600">{errors.resume.message}</p>}
+            </div>
+
+            <div>
+              <label htmlFor="coverLetter" className="block text-sm font-semibold leading-6 text-gray-900">
+                Cover Letter
+              </label>
+              <textarea
+                id="coverLetter"
+                rows={4}
+                {...register('coverLetter', { required: 'Cover letter is required' })}
+                className="mt-2 block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6"
+              />
+              {errors.coverLetter && <p className="mt-2 text-sm text-red-600">{errors.coverLetter.message}</p>}
+            </div>
+
+            <div>
+              <button
+                type="submit"
+                className="block w-full rounded-md bg-teal-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
+              >
+                Submit Application
+              </button>
+            </div>
+          </form>
+        </div>
+      </div> */}
+    </>
+  );
+}

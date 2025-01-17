@@ -125,10 +125,6 @@ const services = [
 export default function Services() {
   return (
     <motion.div>
-      <Helmet>
-        <title>Our Services - CA Portfolio</title>
-        <meta name="description" content="Explore our comprehensive range of accounting and financial services." />
-      </Helmet>
 
       <div className="bg-white py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">

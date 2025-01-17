@@ -54,7 +54,7 @@ export function ImageSlider() {
   };
 
   return (
-    <div className="relative h-[600px] w-full overflow-hidden">
+    <div className="relative top-[4rem] h-[600px] w-full overflow-hidden">
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -68,7 +68,7 @@ export function ImageSlider() {
             alt={slide.title}
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 z-20 flex items-center justify-center text-center text-white">
+          <div className="absolute inset-0 z-20 left-5 flex items-center justify-center text-center text-white">
             <div className="max-w-3xl px-4">
               <h2 className="text-4xl sm:text-5xl font-bold mb-4">{slide.title}</h2>
               <p className="text-xl sm:text-2xl">{slide.description}</p>

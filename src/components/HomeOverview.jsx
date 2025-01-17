@@ -3,10 +3,10 @@ import logo from "../Asset/Logo.gif";
 
 export default function HomeOverview() {
   return (
-    <section className="mt-10 bg-slate-50 p-4">
+    <section className="mt-[70px] bg-slate-50 p-4">
       <div className="flex flex-col md:flex-row justify-center gap-10 items-center w-full p-4 m-auto h-full">
         <div className="flex w-full md:w-[30%] justify-center items-center">
-          <img className="shadow-sm shadow-slate-700 p-2" src={logo} alt="Kalpana Chauhan & Associates" />
+          <img className="shadow-sm shadow-slate-700 p-2 w-full md:w-auto" src={logo} alt="Kalpana Chauhan & Associates" />
         </div>
         <div className="w-full md:w-[60%] flex gap-4 flex-col h-full">
           <h1 className="text-xl items-center ml-2 font-semibold text-center md:text-left">Best Chartered Accountant in NCR region</h1>
