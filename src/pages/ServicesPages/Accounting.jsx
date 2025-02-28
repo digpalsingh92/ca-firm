@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+
 import Breadcrumb from "../../components/Breadcrumb";
 import FoundersMessage from "../../components/FoundersMessage";
 import Accounting from "../../Asset/Accounting.webp";
@@ -90,6 +90,9 @@ export default function Auditing() {
 
       {/* Why Us Section */}
       <WhyUsSection />
+      
+      {/* Founders Message Section */}
+      <FoundersMessage />
     </div>
   );
 }

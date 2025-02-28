@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
+import { motion } from "framer-motion";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 
 const Options = [
@@ -23,6 +25,7 @@ const ContactForm = () => {
     phone: "",
     service: "",
     country: "",
+    state: "",
     city: "",
     message: ""
   });
@@ -61,21 +64,52 @@ const ContactForm = () => {
       phone: "",
       service: "",
       country: "",
+      state: "",
       city: "",
       message: ""
     });
   };
 
   return (
-    <div className="container mx-auto p-8">
-      <div className="flex flex-col lg:flex-row justify-between bg-white shadow-lg p-6 rounded-lg">
-        <div className="bg-teal-500 text-white p-8 rounded-lg lg:w-1/3">
-          <h2 className="text-2xl font-bold mb-4">Kalpana Chauhan and associates</h2>
-          <p className="mb-4">For any query or concern, get in touch with us today!</p>
-          <h3 className="font-bold">Opening Hour</h3>
-          <p>Mon - Sat: 9:30 am to 6 pm</p>
-        </div>
-        <div className="flex flex-col lg:w-2/3 p-8 bg-gray-100 rounded-lg">
+    <div className="container w-full ">
+      <div className="flex flex-col lg:flex-row justify-between bg-white p-4 gap-6 rounded-lg">
+        <motion.div
+        
+         className="bg-white w-full text-white p-8 drop-shadow-xl rounded-lg md:w-[50%] lg:w-1/3 mb-6 lg:mb-0">
+          <h2 className="text-2xl text-teal-800 font-bold mb-4">Kalpana Chauhan and associates</h2>
+          <p className="mb-4 text-teal-800">For any query or concern, get in touch with us today!</p>
+        <div className="flex flex-row gap-4 p-2 mt-5 rounded-md text-teal-800 bg-slate-100">
+          <Clock className="w-10"/>
+          <div className="flex flex-col gap-2">
+          <h3 className="font-bold">Business Hours</h3>
+          <p>Mon - Fri: 9:30 am to 6 pm</p>
+          <p>Sat: 10:00 AM - 2:00 PM</p>
+          <p>Sun: closed</p>
+          </div>
+          </div>
+        <div className="flex flex-row gap-4 p-2 mt-5 rounded-md text-teal-800 bg-slate-100">
+          <Mail className="w-10"/>
+          <div className="flex flex-col gap-2">
+          <h3 className="font-bold">Email us at</h3>
+          <p>contact@kcataxcare.com</p>
+          </div>
+          </div>
+        <div className="flex flex-row gap-4 p-2 mt-5 rounded-md text-teal-800 bg-slate-100">
+          <Phone className="w-10"/>
+          <div className="flex flex-col gap-2">
+          <h3 className="font-bold">Call us on</h3>
+          <p>+91 - 9013870636</p>
+          </div>
+          </div>
+        <div className="flex flex-row gap-4 p-2 mt-5  rounded-md text-teal-800 bg-slate-100">
+          <MapPin className="w-10"/>
+         <div className="flex flex-col gap-2">
+         <h3 className="font-bold">Visit us at</h3>
+          <p className="">B-077, 7th Floor, ATS Bouquet, A2/2, Sector 132, Noida,(U.P) - 201304</p>
+          </div> 
+          </div>
+        </motion.div>
+        <div className="flex flex-col w-full lg:w-2/3 bg-gray-100 rounded-lg">
           <form className="grid grid-cols-1 lg:grid-cols-2 gap-4" onSubmit={handleSubmit}>
             <input
               type="text"
@@ -119,9 +153,18 @@ const ContactForm = () => {
             </select>
             <input
               type="text"
-              name="country"
+              name="Country"
               placeholder="Select Country"
               value={formData.country}
+              onChange={handleChange}
+              className="p-2 rounded border border-gray-300"
+              required
+            />
+            <input
+              type="text"
+              name="state"
+              placeholder="State"
+              value={formData.state}
               onChange={handleChange}
               className="p-2 rounded border border-gray-300"
               required

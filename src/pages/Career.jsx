@@ -121,7 +121,7 @@ export default function Career() {
               We offer competitive benefits and a supportive work environment.
             </p>
           </div>
-          <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:max-w-none lg:grid-cols-4">
+          <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-1 lg:max-w-none lg:grid-cols-4">
             {benefits.map((benefit) => (
               <div key={benefit.title} className="text-center">
                 <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-teal-100">
