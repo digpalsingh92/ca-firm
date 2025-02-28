@@ -65,6 +65,7 @@ export function ImageSlider() {
           <div className="absolute inset-0 bg-black/50 z-10" />
           <img
             src={slide.image}
+            loading='eager'
             alt={slide.title}
             className="h-full w-full object-cover"
           />
@@ -79,12 +80,14 @@ export function ImageSlider() {
       
       <button
         onClick={prevSlide}
+        aria-label='Previous Slide'
         className="absolute left-4 top-1/2 z-30 -translate-y-1/2 bg-white/80 p-2 rounded-full hover:bg-white transition-colors duration-200"
       >
         <ChevronLeft className="h-6 w-6 text-gray-800" />
       </button>
       <button
         onClick={nextSlide}
+        aria-label='Next Slide'
         className="absolute right-4 top-1/2 z-30 -translate-y-1/2 bg-white/80 p-2 rounded-full hover:bg-white transition-colors duration-200"
       >
         <ChevronRight className="h-6 w-6 text-gray-800" />
@@ -94,8 +97,9 @@ export function ImageSlider() {
         {slides.map((_, index) => (
           <button
             key={index}
+            aria-label='Slider Position Indicator'
             onClick={() => setCurrentSlide(index)}
-            className={`h-2 w-2 rounded-full transition-all duration-200 ${
+            className={`h-3 w-10 rounded-full transition-all duration-200 ${
               index === currentSlide ? 'bg-white w-4' : 'bg-white/50'
             }`}
           />

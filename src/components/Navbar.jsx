@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../Asset/Logo.gif";
-import { ChevronRight, ChevronRightIcon } from "lucide-react";
+import { ChevronRightIcon } from "lucide-react";
 
 const navItems = [
   { name: "Home" },
@@ -42,11 +42,13 @@ export default function Navbar() {
       className={`fixed top-0 w-full h-[70px] z-50 transition-all duration-300 bg-slate-300 shadow-md `}
     >
       <div className="w-full mx-auto flex justify-between items-center px-5">
-        <div className="flex-grow-0">
+        <div className="flex-grow-0 p-2">
           <img
+          width={120}
+          height={120}
             src={Logo}
             alt="Kalpana Chauhan & Associates"
-            className="w-[120px] mt-3 items-center justify-center"
+            className="w-[120px] items-center justify-center"
           />
         </div>
         <div className="hidden md:flex flex-grow justify-center px-5">
@@ -103,6 +105,7 @@ export default function Navbar() {
         <div className="md:hidden">
           <button
             onClick={toggleMenu}
+            aria-label="Toggle Menu Button"
             className="text-gray-900 focus:outline-none"
           >
             <svg
@@ -140,6 +143,15 @@ export default function Navbar() {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link
+                to="/contact"
+                className="text-gray-900 text-[14px] font-medium hover:text-teal-600"
+                onClick={toggleMenu}
+              >
+                CONTACT
+              </Link>
+            </li>
           </ul>
         </div>
       )}

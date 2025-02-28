@@ -50,18 +50,18 @@ const ContactPage = () => {
   return (
     <>
     <Helmet>
-            <title>Contact - KCA TaxCare</title>
+            <title>Contact us - KCA TaxCare</title>
             <meta name="description" content="Explore our comprehensive range of accounting and financial services." />
-          </Helmet>
-    <section className=" bg-gray-100">
-      <div className="flex flex-col py-4 p-4 mt-[70px] items-center w-full min-h-[70vh]">
-        <div className=" w-[90%] bg-gray-100 ">
-          <ul className="flex gap-2">
+    </Helmet>
+    <section className="container p-4">
+      <div className="flex flex-col py-4 mt-[70px] items-center w-full min-h-[70vh]">
+        <div className=" w-[90%] ">
+          <ul className="flex flex-wrap justify-center md:justify-start gap-2">
             {offices.map((office, index) => (
               <li key={index}>
                 <button
                   onClick={() => setSelectedOffice(office)}
-                  className={`px-4 py-2 mb-2 rounded-md ${
+                  className={`p-2 mb-2 rounded-md ${
                     selectedOffice.name === office.name
                       ? "bg-teal-600 text-white"
                       : " text-black hover:bg-teal-600"
@@ -73,12 +73,12 @@ const ContactPage = () => {
             ))}
           </ul>
         </div>
-        <div className=" w-[90%] flex flex-col h-full justify-center">
-          <h1 className="text-3xl font-bold mb-4">
+        <div className=" w-full p-2 flex flex-col h-full justify-center">
+          <h1 className="text-2xl text-center md:text-left font-bold mb-4">
             {selectedOffice.Office}: <span className="text-teal-600">{selectedOffice.name}</span>
           </h1>
           <div className="mb-4">
-            <p className="text-xl gap-2 flex items-center ">
+            <p className="text-xl gap-3 flex items-center ">
               <FaMapMarkerAlt className="text-teal-600 font-medium" /> {selectedOffice.address}
             </p>
             <p className="text-xl gap-2 flex items-center">

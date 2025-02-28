@@ -12,7 +12,7 @@ export default function OurTeam() {
       position: "Founder",
       mobile: "9013870636",
       email: "@gmail.com",
-      image: kalpana, // Replace with actual image path
+      image: kalpana,
     },
     {
       name: "CA Lalit",
@@ -20,7 +20,7 @@ export default function OurTeam() {
       position: "Founding Partner",
       mobile: "8076501471",
       email: "abc@gmail.com",
-      image: lalit, // Replace with actual image path
+      image: lalit,
     },
     {
       name: "CA Mohit kumar Tripathi",
@@ -28,7 +28,7 @@ export default function OurTeam() {
       position: "Founding Partner",
       mobile: "8826897210",
       email: "abc@gmail.com",
-      image: mohit, // Replace with actual image path
+      image: mohit,
     },
     {
       name: "CA Jitendra Singh Chauhan",
@@ -36,9 +36,8 @@ export default function OurTeam() {
       position: "Founding Partner",
       mobile: "8826897210",
       email: "abc@gmail.com",
-      image: Jitendra, // Replace with actual image path
+      image: Jitendra,
     },
-    // Add more team members here
   ];
 
   return (
@@ -55,7 +54,7 @@ export default function OurTeam() {
             >
               <div className="w-[40%] rounded-md flex justify-center items-center">
                 <img
-                  className="w-[80%] p-2 h-[90%] rounded-[4rem] items-center justify-center object-cover"
+                  className="w-[80%] p-2 h-[80%] rounded-[4rem] items-center justify-center object-cover"
                   src={member.image}
                   alt={member.name}
                 />

@@ -1,15 +1,17 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Award, Users, Target, Shield, BookOpen, Globe } from 'lucide-react';
+import { Users, Target, Shield, Globe, ArrowRight } from 'lucide-react';
 import kalpana from "../../Asset/kalpana_chauhan.webp";
 import lalit from "../../Asset/lalit_tomar.webp";
 import Breadcrumb from "../../components/Breadcrumb";
+import CountUp from 'react-countup';
+import { Link } from 'react-router-dom';
 
 const stats = [
   { label: 'Years of Experience', value: '14+' },
   { label: 'Satisfied Clients', value: '1000+' },
   { label: 'Professional Team', value: '20+' },
-  { label: 'Cities Served', value: '4' },
+  { label: 'Cities Served', value: '4+' },
 ];
 
 const values = [
@@ -31,7 +33,7 @@ const values = [
   {
     icon: Globe,
     title: 'Wide Reach',
-    description: 'Serving clients across Delhi NCR, Greater Noida, and Mumbai.'
+    description: 'Serving clients across all India (Delhi NCR, Greater Noida, and Mumbai, Aligarh, and many more).'
   }
 ];
 
@@ -43,11 +45,10 @@ const About = () => {
         <meta name="description" content="Learn about Kalpana Chauhan & Associates, a leading Chartered Accountancy Firm established in 2010." />
       </Helmet>
 
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
-        <Breadcrumb items={[{ name: "Home", link: "/" }, { name: "About" }]} />
-        
+      <div className="min-h-screen bg-gradient-to-b mt-[70px] from-slate-50 to-white">
+      <Breadcrumb items={[{ name: "Home", link: "/" }, { name: "About" }]} />
         {/* Hero Section */}
-        <div className="relative isolate mt-[70px] px-6 pt-14 lg:px-8">
+        <div className="relative isolate  px-6 pt-5 lg:px-8">
           <div className="mx-auto max-w-4xl py-12 sm:py-16">
             <div className="text-center">
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
@@ -68,7 +69,7 @@ const About = () => {
                 <div key={stat.label} className="mx-auto flex max-w-xs flex-col gap-y-4">
                   <dt className="text-base leading-7 text-gray-600">{stat.label}</dt>
                   <dd className="order-first text-3xl font-semibold tracking-tight text-teal-600 sm:text-5xl">
-                    {stat.value}
+                  {stat.label === 'Satisfied Clients' ? (<CountUp end={1000} duration={1}/>) : (stat.value)}
                   </dd>
                 </div>
               ))}
@@ -87,7 +88,7 @@ const About = () => {
                 Led by experienced professionals who are Fellow members of the Institute of Chartered Accountants of India.
               </p>
             </div>
-            <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:gap-x-16">
+            <div className="mx-auto mt-16 grid max-w-2xl grid-cols-2 gap-x-12 gap-y-16 sm:grid-cols-1 lg:mx-0 lg:max-w-none lg:gap-x-16">
               {[
                 { image: lalit, name: "CA Lalit Tomar", role: "Founder & Partner" },
                 { image: kalpana, name: "CA Kalpana Chauhan", role: "Founder & Partner" }
@@ -103,8 +104,17 @@ const About = () => {
                 </div>
               ))}
             </div>
+            <div className="mt-12 text-center">
+              <Link
+                to="/team"
+                className="inline-flex items-center gap-2 text-lg font-semibold text-teal-600 hover:text-teal-500 transition-colors"
+              >
+                Meet our entire team <ArrowRight className="h-5 w-5" />
+              </Link>
+            </div>
           </div>
         </div>
+        
 
         {/* Values Section */}
         <div className="bg-slate-50 py-24 sm:py-32">
@@ -117,7 +127,7 @@ const About = () => {
                 Built on the foundation of excellence, integrity, and client success.
               </p>
             </div>
-            <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:max-w-none lg:grid-cols-4">
+            <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-1 lg:max-w-none lg:grid-cols-4">
               {values.map((value) => (
                 <div key={value.title} className="flex flex-col items-center text-center">
                   <div className="rounded-lg bg-teal-100 p-4 mb-6">
@@ -139,7 +149,7 @@ const About = () => {
                 <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-6">
                   Our Mission
                 </h2>
-                <p className="text-lg leading-8 text-gray-600">
+                <p className="text-md leading-8 text-gray-600">
                   Our mission is to serve our clients with creativity, brought about by out-of-the-box thinking, enthusiasm, stemming from the blend of young, experienced, and dynamic team members, diligence assured by cumulative years of the firm's experience, and vision captured by pre-empting client needs.
                 </p>
               </div>
@@ -147,7 +157,7 @@ const About = () => {
                 <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-6">
                   Our Services
                 </h2>
-                <p className="text-lg leading-8 text-gray-600">
+                <p className="text-md leading-8 text-gray-600">
                   We provide comprehensive services in Taxation Laws, Corporate Laws, Registration of Companies, Partnership Firms, Societies, Trusts, NGOs, Legal Consultancy, Labour Laws, Intellectual Property Rights, Foreign Direct Investment in India, Statutory Compliance Audit, and Legal advisory.
                 </p>
               </div>
